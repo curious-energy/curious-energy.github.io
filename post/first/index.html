@@ -7,7 +7,7 @@
         <meta name="description" content="博客使用方法记录">
         <meta property="og:site_name" content="博客使用方法记录" />
         <meta property="og:title" content="李鑫 | Li Xin" />
-        <meta property="og:description" content="你好，我是李鑫，在中国科学院西安光学精密机械研究所/中国科学院大学攻读博士学位（博士三年级），主要研究领域为基于视觉的无人系统智能环境感知，定位与导航，研究应用场景为无人机集群的智能感知定位协作。(Hi, I am Li Xin, currently pursuing my PhD (3rd year) at Xi&#39;an Institute of Optics and Precision Machinery, Chinese Academy of Sciences / University of Chinese Academy of Sciences. My main research area is vision-based intelligent environment perception, localization and navigation for unmanned systems, and my research application scenario is intelligent perception and localization collaboration for UAV swarms.)"/>
+        <meta property="og:description" content=""/>
         <meta property="og:image" content="https://curious-energy.github.io/img/author.jpg" />
     
     
@@ -93,6 +93,8 @@
     </p>
     <span class="tags">
         
+        <h5><a class="tag" href='https://curious-energy.github.io/tags/%e5%a4%87%e5%bf%98'>备忘</a></h5>
+        
     </span>
     
     <div class="content">
@@ -115,10 +117,15 @@ Available Commands:
   server      A high performance webserver
   version     Print the version number of Hugo
 </code></pre><p>常用的命令也就是<code>hugo new somthing.md</code>创建自己的博客，
-然后<code>hugo server</code>进行渲染预览，最后<code>hugo deploy</code>上传文件。</p>
+然后<code>hugo server</code>进行渲染预览，cd到/public目录下进行git命令操作。</p>
+<p>按照顺序</p>
+<pre><code>git diff
+git add -A
+git commit -m &quot;XXX&quot;
+git push origin main
+</code></pre><p>如果有奇怪情况，可以删除/public目录重新生成。</p>
 <p>安装hugo的时候，按着官方走记得很快就安装好了，我这里使用的是ubuntu（建议使用最新的长期版LST版）
 需要提醒的只有安装版本<code>hugo_extended_0.86.0_Linux-64bit.deb</code>。</p>
-
     </div>
     
 </section>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>备忘 on 李鑫 | Li Xin</title>
+    <link>https://curious-energy.github.io/tags/%E5%A4%87%E5%BF%98/</link>
+    <description>Recent content in 备忘 on 李鑫 | Li Xin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>utf-8</language>
+    <lastBuildDate>Thu, 29 Jul 2021 03:32:18 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/tags/%E5%A4%87%E5%BF%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>博客使用方法记录</title>
+      <link>https://curious-energy.github.io/post/first/</link>
+      <pubDate>Thu, 29 Jul 2021 03:32:18 +0800</pubDate>
+      
+      <guid>https://curious-energy.github.io/post/first/</guid>
+      <description>&lt;p&gt;一些语法，防止遗忘，记录下来&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

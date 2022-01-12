@@ -3,19 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://curious-energy.github.io/</loc>
-    <lastmod>2021-07-29T03:32:18+08:00</lastmod>
+    <lastmod>2022-01-13T01:42:25+08:00</lastmod>
+  </url><url>
+    <loc>https://curious-energy.github.io/tags/md/</loc>
+    <lastmod>2022-01-13T01:42:25+08:00</lastmod>
   </url><url>
     <loc>https://curious-energy.github.io/post/</loc>
-    <lastmod>2021-07-29T03:32:18+08:00</lastmod>
+    <lastmod>2022-01-13T01:42:25+08:00</lastmod>
+  </url><url>
+    <loc>https://curious-energy.github.io/tags/</loc>
+    <lastmod>2022-01-13T01:42:25+08:00</lastmod>
+  </url><url>
+    <loc>https://curious-energy.github.io/tags/vim/</loc>
+    <lastmod>2022-01-13T01:42:25+08:00</lastmod>
+  </url><url>
+    <loc>https://curious-energy.github.io/post/vim-plug-for-markdown-view/</loc>
+    <lastmod>2022-01-13T01:42:25+08:00</lastmod>
   </url><url>
     <loc>https://curious-energy.github.io/post/first/</loc>
     <lastmod>2021-07-29T03:32:18+08:00</lastmod>
   </url><url>
+    <loc>https://curious-energy.github.io/tags/%E5%A4%87%E5%BF%98/</loc>
+    <lastmod>2021-07-29T03:32:18+08:00</lastmod>
+  </url><url>
     <loc>https://curious-energy.github.io/about/</loc>
     <lastmod>2021-06-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://curious-energy.github.io/archives/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://curious-energy.github.io/categories/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
@@ -36,9 +48,6 @@
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://curious-energy.github.io/categories/syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://curious-energy.github.io/tags/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://curious-energy.github.io/categories/themes/</loc>

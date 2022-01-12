@@ -6,7 +6,34 @@
     <description>Recent posts from on 李鑫 | Li Xin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>utf-8</language>
-    <lastBuildDate>Thu, 29 Jul 2021 03:32:18 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Jan 2022 01:42:25 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim Plug for Markdown View</title>
+      <link>https://curious-energy.github.io/post/vim-plug-for-markdown-view/</link>
+      <pubDate>Thu, 13 Jan 2022 01:42:25 +0800</pubDate>
+      
+      <guid>https://curious-energy.github.io/post/vim-plug-for-markdown-view/</guid>
+      <description>&lt;p&gt;VIM的这个插件解决了平时阅读md文件的麻烦&lt;/p&gt;
+&lt;p&gt;首先，（明天还要核酸检测！）&lt;a href=&#34;https://github.com/junegunn/vim-plug&#34;&gt;vim-plug&lt;/a&gt;安装，一句命令&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后配置用户.vimrc文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;call plug#begin()
+Plug &#39;iamcco/mathjax-support-for-mkdp&#39;
+Plug &#39;iamcco/markdown-preview.vim&#39;
+
+call plug#end()
+
+# 运行了PlugInstall命令后再加入下面4行快捷键，F8预览，F9返回
+
+nmap &amp;lt;silent&amp;gt; &amp;lt;F8&amp;gt; &amp;lt;Plug&amp;gt;MarkdownPreview        &amp;quot; for normal mode
+imap &amp;lt;silent&amp;gt; &amp;lt;F8&amp;gt; &amp;lt;Plug&amp;gt;MarkdownPreview        &amp;quot; for insert mode
+nmap &amp;lt;silent&amp;gt; &amp;lt;F9&amp;gt; &amp;lt;Plug&amp;gt;StopMarkdownPreview    &amp;quot; for normal mode
+imap &amp;lt;silent&amp;gt; &amp;lt;F9&amp;gt; &amp;lt;Plug&amp;gt;StopMarkdownPreview    &amp;quot; for insert mode
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;至此就结束了，配图&lt;/p&gt;
+&lt;p&gt;[](/images/Screenshot from 2022-01-13 01-55-37.png)&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>博客使用方法记录</title>
       <link>https://curious-energy.github.io/post/first/</link>
@@ -32,10 +59,15 @@ Available Commands:
   server      A high performance webserver
   version     Print the version number of Hugo
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;常用的命令也就是&lt;code&gt;hugo new somthing.md&lt;/code&gt;创建自己的博客，
-然后&lt;code&gt;hugo server&lt;/code&gt;进行渲染预览，最后&lt;code&gt;hugo deploy&lt;/code&gt;上传文件。&lt;/p&gt;
+然后&lt;code&gt;hugo server&lt;/code&gt;进行渲染预览，cd到/public目录下进行git命令操作。&lt;/p&gt;
+&lt;p&gt;按照顺序&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git diff
+git add -A
+git commit -m &amp;quot;XXX&amp;quot;
+git push origin main
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;如果有奇怪情况，可以删除/public目录重新生成。&lt;/p&gt;
 &lt;p&gt;安装hugo的时候，按着官方走记得很快就安装好了，我这里使用的是ubuntu（建议使用最新的长期版LST版）
-需要提醒的只有安装版本&lt;code&gt;hugo_extended_0.86.0_Linux-64bit.deb&lt;/code&gt;。&lt;/p&gt;
-</description>
+需要提醒的只有安装版本&lt;code&gt;hugo_extended_0.86.0_Linux-64bit.deb&lt;/code&gt;。&lt;/p&gt;</description>
     </item>
     
     <item>

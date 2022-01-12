@@ -6,15 +6,23 @@
     <description>Recent content in Posts on 李鑫 | Li Xin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>utf-8</language>
-    <lastBuildDate>Thu, 29 Jul 2021 03:32:18 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Jan 2022 01:42:25 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim Plug for Markdown View</title>
+      <link>https://curious-energy.github.io/post/vim-plug-for-markdown-view/</link>
+      <pubDate>Thu, 13 Jan 2022 01:42:25 +0800</pubDate>
+      
+      <guid>https://curious-energy.github.io/post/vim-plug-for-markdown-view/</guid>
+      <description>&lt;p&gt;VIM的这个插件解决了平时阅读md文件的麻烦&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>博客使用方法记录</title>
       <link>https://curious-energy.github.io/post/first/</link>
       <pubDate>Thu, 29 Jul 2021 03:32:18 +0800</pubDate>
       
       <guid>https://curious-energy.github.io/post/first/</guid>
-      <description>一些语法，防止遗忘，记录下来
-Usage: hugo [flags] hugo [command] Available Commands: config Print the site configuration convert Convert your content to different formats deploy Deploy your site to a Cloud provider. env Print Hugo version and environment info gen A collection of several useful generators. help Help about any command import Import your site from others. list Listing out various types of content mod Various Hugo Modules helpers. new Create new content for your site server A high performance webserver version Print the version number of Hugo 常用的命令也就是hugo new somthing.</description>
+      <description>&lt;p&gt;一些语法，防止遗忘，记录下来&lt;/p&gt;</description>
     </item>
     
     <item>

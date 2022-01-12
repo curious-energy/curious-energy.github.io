@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VIM on 李鑫 | Li Xin</title>
+    <link>https://curious-energy.github.io/tags/vim/</link>
+    <description>Recent content in VIM on 李鑫 | Li Xin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>utf-8</language>
+    <lastBuildDate>Thu, 13 Jan 2022 01:42:25 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim Plug for Markdown View</title>
+      <link>https://curious-energy.github.io/post/vim-plug-for-markdown-view/</link>
+      <pubDate>Thu, 13 Jan 2022 01:42:25 +0800</pubDate>
+      
+      <guid>https://curious-energy.github.io/post/vim-plug-for-markdown-view/</guid>
+      <description>&lt;p&gt;VIM的这个插件解决了平时阅读md文件的麻烦&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

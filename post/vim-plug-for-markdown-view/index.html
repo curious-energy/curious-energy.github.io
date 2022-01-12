@@ -3,9 +3,9 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     
-        <title>markdown | 李鑫 | Li Xin</title>
-        <meta name="description" content="markdown">
-        <meta property="og:site_name" content="markdown" />
+        <title>Vim Plug for Markdown View | 李鑫 | Li Xin</title>
+        <meta name="description" content="Vim Plug for Markdown View">
+        <meta property="og:site_name" content="Vim Plug for Markdown View" />
         <meta property="og:title" content="李鑫 | Li Xin" />
         <meta property="og:description" content=""/>
         <meta property="og:image" content="https://curious-energy.github.io/img/author.jpg" />
@@ -29,7 +29,6 @@
     <link rel="stylesheet" href="https://curious-energy.github.io/sass/main.min.897eb4b3722ab153248cdb5469cb00ab5d8b6167ff97d8234eb344fff657406e.css" type="text/css" media="screen" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
     
-    <link rel="alternate" type="application/rss+xml" href="https://curious-energy.github.io/tags/markdown/index.xml" title="李鑫 | Li Xin" />
     </head>
 
 <body>
@@ -84,49 +83,45 @@
   });
 </script>
 
-<br>
-    <h2 class="post-title"><a class="go-back" href="https://curious-energy.github.io/">
-	<i class="far fa-caret-square-left"></i> </a>markdown</h2>
+<section class="intro">
+    
+    <h1 class="post-title"><a class="go-back" href="https://curious-energy.github.io/post/">
+	      <i class="far fa-caret-square-left"></i></a> Vim Plug for Markdown View</h1>
+    <p class="post-dets">Published on: January 13, 2022
+        | Reading Time: 1 min | Last Modified : January 13, 2022
+        <br>
+    </p>
+    <span class="tags">
         
+        <h5><a class="tag" href='https://curious-energy.github.io/tags/VIM'>VIM</a></h5>
         
-          
-            <div>
-              
-                <well class="well">
-                    <h3><a class="link" href="https://curious-energy.github.io/post/markdown-syntax/">Markdown Syntax Guide</a></h3>
-                    <h4>March 11, 2019 | Reading Time: 3 min </h4>
-                    <span class="tags">
-                        
-                        <h5><a class="tag" href='https://curious-energy.github.io/tags/markdown'>markdown</a></h5>
-                        
-                        <h5><a class="tag" href='https://curious-energy.github.io/tags/css'>css</a></h5>
-                        
-                        <h5><a class="tag" href='https://curious-energy.github.io/tags/html'>html</a></h5>
-                        
-                    </span>
-                    <p><p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.</p></p>
-                </well>
-                            
-            </div><br>
-          
-            <div>
-              
-                <well class="well">
-                    <h3><a class="link" href="https://curious-energy.github.io/post/placeholder-text/">Placeholder Text</a></h3>
-                    <h4>March 9, 2019 | Reading Time: 2 min </h4>
-                    <span class="tags">
-                        
-                        <h5><a class="tag" href='https://curious-energy.github.io/tags/markdown'>markdown</a></h5>
-                        
-                        <h5><a class="tag" href='https://curious-energy.github.io/tags/text'>text</a></h5>
-                        
-                    </span>
-                    <p><p>Lorem est tota propiore conpellat pectoribus de pectora summo.</p></p>
-                </well>
-                            
-            </div><br>
-          
+        <h5><a class="tag" href='https://curious-energy.github.io/tags/MD'>MD</a></h5>
         
+    </span>
+    
+    <div class="content">
+        <p>VIM的这个插件解决了平时阅读md文件的麻烦</p>
+<p>首先，（明天还要核酸检测！）<a href="https://github.com/junegunn/vim-plug">vim-plug</a>安装，一句命令</p>
+<pre><code>curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+</code></pre><p>然后配置用户.vimrc文件</p>
+<pre><code>call plug#begin()
+Plug 'iamcco/mathjax-support-for-mkdp'
+Plug 'iamcco/markdown-preview.vim'
+
+call plug#end()
+
+# 运行了PlugInstall命令后再加入下面4行快捷键，F8预览，F9返回
+
+nmap &lt;silent&gt; &lt;F8&gt; &lt;Plug&gt;MarkdownPreview        &quot; for normal mode
+imap &lt;silent&gt; &lt;F8&gt; &lt;Plug&gt;MarkdownPreview        &quot; for insert mode
+nmap &lt;silent&gt; &lt;F9&gt; &lt;Plug&gt;StopMarkdownPreview    &quot; for normal mode
+imap &lt;silent&gt; &lt;F9&gt; &lt;Plug&gt;StopMarkdownPreview    &quot; for insert mode
+</code></pre><p>至此就结束了，配图</p>
+<p>[](/images/Screenshot from 2022-01-13 01-55-37.png)</p>
+    </div>
+    
+</section>
 <footer id="footer">
     <strong></strong>
     <div class="social">
