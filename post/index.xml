@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 李鑫 | Li Xin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>utf-8</language>
-    <lastBuildDate>Fri, 14 Jan 2022 12:50:00 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Jan 2022 22:58:27 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo数学符号支持</title>
+      <link>https://curious-energy.github.io/post/math-print/</link>
+      <pubDate>Fri, 14 Jan 2022 22:58:27 +0800</pubDate>
+      
+      <guid>https://curious-energy.github.io/post/math-print/</guid>
+      <description>&lt;p&gt;打几个数学公式试试~&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Vim Key Short</title>
       <link>https://curious-energy.github.io/post/vim-key-short/</link>
