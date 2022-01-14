@@ -25,5 +25,14 @@
       <description>&lt;p&gt;一些语法，防止遗忘，记录下来&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Markdown语法指导</title>
+      <link>https://curious-energy.github.io/post/markdown-syntax/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://curious-energy.github.io/post/markdown-syntax/</guid>
+      <description>&lt;p&gt;MarkDown语言的基础语法，留着用&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>

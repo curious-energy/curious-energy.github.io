@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>语法 on 李鑫 | Li Xin</title>
+    <link>https://curious-energy.github.io/categories/%E8%AF%AD%E6%B3%95/</link>
+    <description>Recent content in 语法 on 李鑫 | Li Xin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>utf-8</language>
+    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://curious-energy.github.io/categories/%E8%AF%AD%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown语法指导</title>
+      <link>https://curious-energy.github.io/post/markdown-syntax/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://curious-energy.github.io/post/markdown-syntax/</guid>
+      <description>&lt;p&gt;MarkDown语言的基础语法，留着用&amp;hellip;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
