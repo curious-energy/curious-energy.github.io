@@ -6,7 +6,16 @@
     <description>Recent content in markdown on 李鑫 | Li Xin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>utf-8</language>
-    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://curious-energy.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 Jan 2022 01:42:25 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim Plug for Markdown View</title>
+      <link>https://curious-energy.github.io/post/vim-plug-for-markdown-view/</link>
+      <pubDate>Thu, 13 Jan 2022 01:42:25 +0800</pubDate>
+      
+      <guid>https://curious-energy.github.io/post/vim-plug-for-markdown-view/</guid>
+      <description>&lt;p&gt;VIM的这个插件解决了平时阅读md文件的麻烦&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Markdown Syntax Guide</title>
       <link>https://curious-energy.github.io/post/markdown-syntax/</link>
@@ -14,15 +23,6 @@
       
       <guid>https://curious-energy.github.io/post/markdown-syntax/</guid>
       <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Placeholder Text</title>
-      <link>https://curious-energy.github.io/post/placeholder-text/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://curious-energy.github.io/post/placeholder-text/</guid>
-      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
     </item>
     
   </channel>

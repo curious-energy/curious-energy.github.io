@@ -6,7 +6,16 @@
     <description>Recent content in 备忘 on 李鑫 | Li Xin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>utf-8</language>
-    <lastBuildDate>Thu, 29 Jul 2021 03:32:18 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/tags/%E5%A4%87%E5%BF%98/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Jan 2022 12:50:00 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/tags/%E5%A4%87%E5%BF%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim Key Short</title>
+      <link>https://curious-energy.github.io/post/vim-key-short/</link>
+      <pubDate>Fri, 14 Jan 2022 12:50:00 +0800</pubDate>
+      
+      <guid>https://curious-energy.github.io/post/vim-key-short/</guid>
+      <description>&lt;p&gt;这里主要介绍vim的快捷键，为了防止遗忘。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>博客使用方法记录</title>
       <link>https://curious-energy.github.io/post/first/</link>
