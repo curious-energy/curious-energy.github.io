@@ -6,7 +6,16 @@
     <description>Recent content in VIM on 李鑫 | Li Xin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>utf-8</language>
-    <lastBuildDate>Thu, 13 Jan 2022 01:42:25 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Jan 2022 12:50:00 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim Key Short</title>
+      <link>https://curious-energy.github.io/post/vim-key-short/</link>
+      <pubDate>Fri, 14 Jan 2022 12:50:00 +0800</pubDate>
+      
+      <guid>https://curious-energy.github.io/post/vim-key-short/</guid>
+      <description>&lt;p&gt;这里主要介绍vim的快捷键，为了防止遗忘。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Vim Plug for Markdown View</title>
       <link>https://curious-energy.github.io/post/vim-plug-for-markdown-view/</link>

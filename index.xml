@@ -6,7 +6,28 @@
     <description>Recent posts from on 李鑫 | Li Xin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>utf-8</language>
-    <lastBuildDate>Thu, 13 Jan 2022 01:42:25 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Jan 2022 12:50:00 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim Key Short</title>
+      <link>https://curious-energy.github.io/post/vim-key-short/</link>
+      <pubDate>Fri, 14 Jan 2022 12:50:00 +0800</pubDate>
+      
+      <guid>https://curious-energy.github.io/post/vim-key-short/</guid>
+      <description>&lt;p&gt;这里主要介绍vim的快捷键，为了防止遗忘。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;插入模式的进入，&lt;code&gt;i&lt;/code&gt;, &lt;code&gt;a&lt;/code&gt;也可以。&lt;/li&gt;
+&lt;li&gt;恢复上一次编辑，先&lt;code&gt;Esc&lt;/code&gt;到View模式，然后按键&lt;code&gt;U&lt;/code&gt;进行撤回。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;x&lt;/code&gt;删除当前选中的字符。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;u&lt;/code&gt;是撤回，与之对应的是&lt;code&gt;Ctrl + r&lt;/code&gt;进行回退。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;v&lt;/code&gt;进行可视模式，可以方便选中。&lt;/li&gt;
+&lt;li&gt;先进性5，复制用&lt;code&gt;y&lt;/code&gt;来进行，剪切用&lt;code&gt;d&lt;/code&gt;，&lt;code&gt;p&lt;/code&gt;来进行粘贴。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;注意事项：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有时候忘记取消中文输入法，会导致按键命令失效，注意一下就没那么多烦恼了。&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
     <item>
       <title>Vim Plug for Markdown View</title>
       <link>https://curious-energy.github.io/post/vim-plug-for-markdown-view/</link>
