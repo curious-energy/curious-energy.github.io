@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+        <title>Wine Wechat Setup | 李鑫 | Li Xin</title>
+        <meta name="description" content="Wine Wechat Setup">
+        <meta property="og:site_name" content="Wine Wechat Setup" />
+        <meta property="og:title" content="李鑫 | Li Xin" />
+        <meta property="og:description" content=""/>
+        <meta property="og:image" content="https://curious-energy.github.io/img/author.jpg" />
+    
+    
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+    
+    <meta name="keywords" content="hugo, theme, minimal, gruvbox">
+    <link rel="icon" type="image/svg" href='https://curious-energy.github.io/img/logo.png'/>
+    <meta name="author" content='lixin'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.86.0" />
+    
+    <link rel="stylesheet" href="https://curious-energy.github.io/sass/main.min.897eb4b3722ab153248cdb5469cb00ab5d8b6167ff97d8234eb344fff657406e.css" type="text/css" media="screen" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
+    
+    </head>
+
+<body>
+      <div class="line" id="scrollIndicator"></div>
+      <div class="main"><div class="title">
+  <div class="name">
+    <h2><a href="https://curious-energy.github.io/"
+	   style="text-decoration: none; color: inherit;">李鑫（Li Xin）</a></h2>
+  </div>
+  <div class="color-scheme">
+    <input type="checkbox" class="checkbox" id="chk" />
+    <label class="label" for="chk">
+      <i class="fas fa-moon"></i>
+      <i class="fas fa-sun"></i>
+      <div class="ball"></div>
+    </label>
+  </div>
+</div>
+<script>
+  const themeSetter = (theme) => {
+      document.body.classList.toggle('light')
+      localStorage.setItem('theme', theme)
+      blockSwitcher()
+  }
+
+  const blockSwitcher = () => [...document.getElementsByTagName("BLOCKQUOTE")]
+	.forEach(b => b.classList.toggle('light'))
+
+  const styleSwapper = () => {
+      document.body.classList.add('back-transition')
+      if (localStorage.getItem('theme') === 'dark') themeSetter('light')
+      else if (localStorage.getItem('theme') === 'light') themeSetter('dark')
+  }
+
+  if (localStorage.getItem('theme') === 'light'){
+      themeSetter('light')
+      document.addEventListener("DOMContentLoaded", blockSwitcher)
+  }
+ else localStorage.setItem('theme', 'dark')
+
+  document.getElementById('chk').addEventListener('change',styleSwapper);
+
+  window.addEventListener("scroll", () => {
+      let height = document.documentElement.scrollHeight
+          - document.documentElement.clientHeight;
+      if(height >= 500){
+	  let winScroll = document.body.scrollTop
+              || document.documentElement.scrollTop;
+	  let scrolled = (winScroll / height) * 100;
+	  document.getElementById("scrollIndicator").style.width = scrolled + "%";
+      }
+  });
+</script>
+
+<section class="intro">
+    
+    <h1 class="post-title"><a class="go-back" href="https://curious-energy.github.io/post/">
+	      <i class="far fa-caret-square-left"></i></a> Wine Wechat Setup</h1>
+    <p class="post-dets">Published on: January 15, 2022
+        | Reading Time: 1 min | Last Modified : January 15, 2022
+        <br>
+    </p>
+    <span class="tags">
+        
+        <h5><a class="tag" href='https://curious-energy.github.io/tags/wine%e7%b3%bb%e7%bb%9f%e7%a7%bb%e6%a4%8d'>wine系统移植</a></h5>
+        
+        <h5><a class="tag" href='https://curious-energy.github.io/tags/ubuntu'>ubuntu</a></h5>
+        
+    </span>
+    
+    <div class="content">
+        <p>这里简要记录一下我在自己相爱相杀ubuntu系统下安装wechat的旅途。</p>
+<h1 id="起初">起初</h1>
+<p>wechat几乎离不开，但是说实话，离开也挺好的，避免了很多干扰。</p>
+<p>但是心里痒痒，毕竟对于我的认识，一个牛逼的系统当然是什么都能做，而且做到极致。</p>
+<p>那我就开始尝试了，依赖广大开源和大牛们的奋献，我很容易就找到了很多方案，但是大多比较久远，不敢尝试了，不维护，很容易出现各种兼容问题。</p>
+<p>我的系统情况如下，可以做个参考</p>
+<pre><code>  % neofetch                                                              !6733
+            .-/+oossssoo+/-.               lx@Legion-R9000P2021H 
+        `:+ssssssssssssssssss+:`           --------------------- 
+      -+ssssssssssssssssssyyssss+-         OS: Ubuntu 20.04.3 LTS x86_64 
+    .ossssssssssssssssssdMMMNysssso.       Host: 82JQ Lenovo Legion R9000P2021H 
+   /ssssssssssshdmmNNmmyNMMMMhssssss/      Kernel: 5.4.0-94-generic 
+  +ssssssssshmydMMMMMMMNddddyssssssss+     Uptime: 52 mins 
+ /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/    Packages: 3364 (dpkg), 13 (snap) 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Shell: zsh 5.8 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   Resolution: 1920x1080, 2560x1600 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   DE: GNOME 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   WM: Mutter 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   WM Theme: Mojave-light 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Theme: Mojave-light [GTK2/3] 
+ /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/    Icons: McMojave-circle-blue [GTK2/3] 
+  +sssssssssdmydMMMMMMMMddddyssssssss+     Terminal: terminator 
+   /ssssssssssshdmNNNNmyNMMMMhssssss/      CPU: AMD Ryzen 7 5800H with Radeon G 
+    .ossssssssssssssssssdMMMNysssso.       GPU: NVIDIA 01:00.0 NVIDIA Corporati 
+      -+sssssssssssssssssyyyssss+-         Memory: 3800MiB / 15923MiB 
+        `:+ssssssssssssssssss+:`
+            .-/+oossssoo+/-.                                       
+                                                                   
+</code></pre><h1 id="旅途中">旅途中</h1>
+<h3 id="基于虚拟机的方式">基于虚拟机的方式</h3>
+<p>虚拟机推荐使用virtual box,装一个win10系统，一切软件都搞定了，设置下共享文件目录就可以实现文件传输，也可以沟通外部usb设备，用途挺大的，尤其是需要做ppt，写word，虽然wps也可以，但是避免了格式错乱。</p>
+<p>ps: 说实话，正常的姿势还是一个系统一台电脑，这个是最有效的。</p>
+<h3 id="基于docker的方式">基于docker的方式</h3>
+<p>基本不会对系统产生什么问题，完成的也比较方便。</p>
+<h3 id="基于wine依赖">基于wine依赖</h3>
+<p>前面的两种方式可以说是成功率极高的方法，就算不成功，对系统环境的也几乎无破坏，可以大胆尝试哦~</p>
+<p>这种方式是我这次实现的重点，但是会有风险，看完我写的在动手尝试哦，首先</p>
+<pre><code>git clone https://github.com/wszqkzqk/deepin-wine-ubuntu
+
+cd deepin-wine-ubuntu/
+
+# 注意，我先尝试运行./install.sh，也没注意到报错信息，但是图标点击不动。
+
+chmod +x install_2.8.22.sh
+./install_2.8.22.sh
+
+</code></pre><p>可以看到进度条滚动，等着大概3到5分钟，ok</p>
+<p>然后进行离线安装，点击<a href="http://packages.deepin.com/deepin/pool/non-free/d/deepin.com.wechat/">链接</a>，选最新的安装包安装就好了</p>
+<pre><code>sudo dpkg -i XXX.deb
+</code></pre><p>卸载</p>
+<pre><code>sudo dpkg -r wechat[tab等提示]
+</code></pre><p>确实，这时候微信就安好了，靠这种方法，可以安装很多wine支持的软件</p>
+<p>软件在top中的运行如下：</p>
+<pre><code>WeChat.exe
+</code></pre><p>系统资源占用和网易云linux版类似，挺好，经测试，可以发表情，接收图片，语音，文件选择。</p>
+<p>如果使用的代理，改变下代理入口。</p>
+<h3 id="小落差">小落差</h3>
+<p>这时，我发现我的副屏没了，然后运行nvidia-smi，哈哈，显卡挂了。不过经历过几次显卡挂的经历，并不认为这没什么大不了的，就是担忧wine和显卡只能得一。</p>
+<p>经过简单的查询，问题主要是因为对显卡的依赖进行了删除。</p>
+<p>那先把显卡挂上吧，记住自己的显卡驱动型号哦，在软件与更新里面选择附加驱动，选择自己当时安装的那个版本，应用改变，等待安装，重启系统，一切好了。</p>
+<p>这时我重新启动wechat，也可以使用</p>
+<h3 id="小优化">小优化</h3>
+<p>去掉小尾巴，安装插件，<a href="https://extensions.gnome.org/extension/1031/topicons/">点击这里</a>，因为我一直使用相关插件，所以开启就行了，如果是全新的，建议安装tweaks等丰富你的ubuntu，如果你时间比较充足。</p>
+<h2 id="末路">末路</h2>
+<p>特别喜欢作者说的一句话:“你不会找到路，除非你敢于迷路”。</p>
+<p>失败不怕，怕的是已经蒙尘的心灵丧失了坦然面对失败的勇气。</p>
+    </div>
+    
+</section>
+<footer id="footer">
+    <strong></strong>
+    <div class="social">
+        &nbsp; <a href="lixin_email@foxmail.com" target="_blank" rel="noopener" title="Email"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></a> &nbsp;&nbsp; <a href="https://github.com/curious-energy" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a> &nbsp;
+    </div><strong></strong>
+    <p style="color:grey;"></p>
+</footer>
+</div>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ubuntu on 李鑫 | Li Xin</title>
+    <link>https://curious-energy.github.io/tags/ubuntu/</link>
+    <description>Recent content in ubuntu on 李鑫 | Li Xin</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>utf-8</language>
+    <lastBuildDate>Sat, 15 Jan 2022 19:05:19 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wine Wechat Setup</title>
+      <link>https://curious-energy.github.io/post/wine-wechat-setup/</link>
+      <pubDate>Sat, 15 Jan 2022 19:05:19 +0800</pubDate>
+      
+      <guid>https://curious-energy.github.io/post/wine-wechat-setup/</guid>
+      <description>&lt;p&gt;这里简要记录一下我在自己相爱相杀ubuntu系统下安装wechat的旅途。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

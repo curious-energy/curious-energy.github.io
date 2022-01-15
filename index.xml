@@ -6,7 +6,81 @@
     <description>Recent posts from on 李鑫 | Li Xin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>utf-8</language>
-    <lastBuildDate>Fri, 14 Jan 2022 22:58:27 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Jan 2022 19:05:19 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wine Wechat Setup</title>
+      <link>https://curious-energy.github.io/post/wine-wechat-setup/</link>
+      <pubDate>Sat, 15 Jan 2022 19:05:19 +0800</pubDate>
+      
+      <guid>https://curious-energy.github.io/post/wine-wechat-setup/</guid>
+      <description>&lt;p&gt;这里简要记录一下我在自己相爱相杀ubuntu系统下安装wechat的旅途。&lt;/p&gt;
+&lt;h1 id=&#34;起初&#34;&gt;起初&lt;/h1&gt;
+&lt;p&gt;wechat几乎离不开，但是说实话，离开也挺好的，避免了很多干扰。&lt;/p&gt;
+&lt;p&gt;但是心里痒痒，毕竟对于我的认识，一个牛逼的系统当然是什么都能做，而且做到极致。&lt;/p&gt;
+&lt;p&gt;那我就开始尝试了，依赖广大开源和大牛们的奋献，我很容易就找到了很多方案，但是大多比较久远，不敢尝试了，不维护，很容易出现各种兼容问题。&lt;/p&gt;
+&lt;p&gt;我的系统情况如下，可以做个参考&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;  % neofetch                                                              !6733
+            .-/+oossssoo+/-.               lx@Legion-R9000P2021H 
+        `:+ssssssssssssssssss+:`           --------------------- 
+      -+ssssssssssssssssssyyssss+-         OS: Ubuntu 20.04.3 LTS x86_64 
+    .ossssssssssssssssssdMMMNysssso.       Host: 82JQ Lenovo Legion R9000P2021H 
+   /ssssssssssshdmmNNmmyNMMMMhssssss/      Kernel: 5.4.0-94-generic 
+  +ssssssssshmydMMMMMMMNddddyssssssss+     Uptime: 52 mins 
+ /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/    Packages: 3364 (dpkg), 13 (snap) 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Shell: zsh 5.8 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   Resolution: 1920x1080, 2560x1600 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   DE: GNOME 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   WM: Mutter 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   WM Theme: Mojave-light 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Theme: Mojave-light [GTK2/3] 
+ /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/    Icons: McMojave-circle-blue [GTK2/3] 
+  +sssssssssdmydMMMMMMMMddddyssssssss+     Terminal: terminator 
+   /ssssssssssshdmNNNNmyNMMMMhssssss/      CPU: AMD Ryzen 7 5800H with Radeon G 
+    .ossssssssssssssssssdMMMNysssso.       GPU: NVIDIA 01:00.0 NVIDIA Corporati 
+      -+sssssssssssssssssyyyssss+-         Memory: 3800MiB / 15923MiB 
+        `:+ssssssssssssssssss+:`
+            .-/+oossssoo+/-.                                       
+                                                                   
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;旅途中&#34;&gt;旅途中&lt;/h1&gt;
+&lt;h3 id=&#34;基于虚拟机的方式&#34;&gt;基于虚拟机的方式&lt;/h3&gt;
+&lt;p&gt;虚拟机推荐使用virtual box,装一个win10系统，一切软件都搞定了，设置下共享文件目录就可以实现文件传输，也可以沟通外部usb设备，用途挺大的，尤其是需要做ppt，写word，虽然wps也可以，但是避免了格式错乱。&lt;/p&gt;
+&lt;p&gt;ps: 说实话，正常的姿势还是一个系统一台电脑，这个是最有效的。&lt;/p&gt;
+&lt;h3 id=&#34;基于docker的方式&#34;&gt;基于docker的方式&lt;/h3&gt;
+&lt;p&gt;基本不会对系统产生什么问题，完成的也比较方便。&lt;/p&gt;
+&lt;h3 id=&#34;基于wine依赖&#34;&gt;基于wine依赖&lt;/h3&gt;
+&lt;p&gt;前面的两种方式可以说是成功率极高的方法，就算不成功，对系统环境的也几乎无破坏，可以大胆尝试哦~&lt;/p&gt;
+&lt;p&gt;这种方式是我这次实现的重点，但是会有风险，看完我写的在动手尝试哦，首先&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/wszqkzqk/deepin-wine-ubuntu
+
+cd deepin-wine-ubuntu/
+
+# 注意，我先尝试运行./install.sh，也没注意到报错信息，但是图标点击不动。
+
+chmod +x install_2.8.22.sh
+./install_2.8.22.sh
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以看到进度条滚动，等着大概3到5分钟，ok&lt;/p&gt;
+&lt;p&gt;然后进行离线安装，点击&lt;a href=&#34;http://packages.deepin.com/deepin/pool/non-free/d/deepin.com.wechat/&#34;&gt;链接&lt;/a&gt;，选最新的安装包安装就好了&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo dpkg -i XXX.deb
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;卸载&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo dpkg -r wechat[tab等提示]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;确实，这时候微信就安好了，靠这种方法，可以安装很多wine支持的软件&lt;/p&gt;
+&lt;p&gt;软件在top中的运行如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;WeChat.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;系统资源占用和网易云linux版类似，挺好，经测试，可以发表情，接收图片，语音，文件选择。&lt;/p&gt;
+&lt;p&gt;如果使用的代理，改变下代理入口。&lt;/p&gt;
+&lt;h3 id=&#34;小落差&#34;&gt;小落差&lt;/h3&gt;
+&lt;p&gt;这时，我发现我的副屏没了，然后运行nvidia-smi，哈哈，显卡挂了。不过经历过几次显卡挂的经历，并不认为这没什么大不了的，就是担忧wine和显卡只能得一。&lt;/p&gt;
+&lt;p&gt;经过简单的查询，问题主要是因为对显卡的依赖进行了删除。&lt;/p&gt;
+&lt;p&gt;那先把显卡挂上吧，记住自己的显卡驱动型号哦，在软件与更新里面选择附加驱动，选择自己当时安装的那个版本，应用改变，等待安装，重启系统，一切好了。&lt;/p&gt;
+&lt;p&gt;这时我重新启动wechat，也可以使用&lt;/p&gt;
+&lt;h3 id=&#34;小优化&#34;&gt;小优化&lt;/h3&gt;
+&lt;p&gt;去掉小尾巴，安装插件，&lt;a href=&#34;https://extensions.gnome.org/extension/1031/topicons/&#34;&gt;点击这里&lt;/a&gt;，因为我一直使用相关插件，所以开启就行了，如果是全新的，建议安装tweaks等丰富你的ubuntu，如果你时间比较充足。&lt;/p&gt;
+&lt;h2 id=&#34;末路&#34;&gt;末路&lt;/h2&gt;
+&lt;p&gt;特别喜欢作者说的一句话:“你不会找到路，除非你敢于迷路”。&lt;/p&gt;
+&lt;p&gt;失败不怕，怕的是已经蒙尘的心灵丧失了坦然面对失败的勇气。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>hugo数学符号支持</title>
       <link>https://curious-energy.github.io/post/math-print/</link>
