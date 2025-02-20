@@ -1,0 +1,28 @@
+
+[
+  
+  
+  {
+    "objectID": "1740045343",
+    "permalink": "/post/test1/",
+    "title": "Test1",
+    
+    "content": "\r文本测试\r子命令\r重置用户登陆失败状态：\nsudo pam_tally2 --user testuser --reset\n查看秘密过期状态：\nsudo chage -l testuser\n改变密码使用时间和提示修改：\nsudo chage -M 150 -W 30 testuser\n督促修改秘密\nchage -d '2023-10-01' testuser\n代码测试\rimport os os.listdir() print(\u0026#34;this is test\u0026#34;) 公式测试\r$$ \\int_0^\\infty e^x dx $$ 不知道这个可以不可以正常使用\n",
+    
+    "date": "2025-02-20 17:55:43",
+    "updated": "2025-02-20 17:55:43"
+  }
+  
+  , 
+  {
+    "objectID": "1678903200",
+    "permalink": "/post/hello/",
+    "title": "Hello World",
+    
+    "content": "💘 博麗 霊夢 💘\n",
+    
+    "date": "2023-03-15 11:00:00",
+    "updated": "2023-03-15 11:00:00"
+  }
+  
+]
