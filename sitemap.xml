@@ -2,8 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://curious-energy.github.io/categories/</loc>
+    <lastmod>2025-02-21T18:53:45+08:00</lastmod>
+  </url><url>
+    <loc>https://curious-energy.github.io/categories/like/</loc>
+    <lastmod>2025-02-21T18:53:45+08:00</lastmod>
+  </url><url>
     <loc>https://curious-energy.github.io/</loc>
-    <lastmod>2025-02-21T17:23:49+08:00</lastmod>
+    <lastmod>2025-02-21T18:53:45+08:00</lastmod>
+  </url><url>
+    <loc>https://curious-energy.github.io/tags/</loc>
+    <lastmod>2025-02-21T18:53:45+08:00</lastmod>
+  </url><url>
+    <loc>https://curious-energy.github.io/categories/%E8%BF%9C%E7%A8%8B%E5%90%8C%E6%AD%A5/</loc>
+    <lastmod>2025-02-21T18:53:45+08:00</lastmod>
+  </url><url>
+    <loc>https://curious-energy.github.io/post/remote_server/</loc>
+    <lastmod>2025-02-21T18:53:45+08:00</lastmod>
+  </url><url>
+    <loc>https://curious-energy.github.io/tags/%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    <lastmod>2025-02-21T18:53:45+08:00</lastmod>
   </url><url>
     <loc>https://curious-energy.github.io/post/uav_swarm_tech_survey/</loc>
     <lastmod>2025-02-21T17:23:49+08:00</lastmod>
@@ -19,9 +37,5 @@
   </url><url>
     <loc>https://curious-energy.github.io/friend/</loc>
     <lastmod>2025-02-21T16:45:52+08:00</lastmod>
-  </url><url>
-    <loc>https://curious-energy.github.io/categories/</loc>
-  </url><url>
-    <loc>https://curious-energy.github.io/tags/</loc>
   </url>
 </urlset>

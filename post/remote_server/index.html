@@ -21,7 +21,7 @@
   
 
 <title>
-  一些网站使用上的备忘录 | Curious Enegry
+  远程同步的一些事项 | Curious Enegry
 </title>
 <meta
   name="description"
@@ -109,27 +109,29 @@
 
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="一些网站使用上的备忘录 | Curious Enegry" />
+  <meta property="og:title" content="远程同步的一些事项 | Curious Enegry" />
   <meta
     property="og:description"
     content="一个私人博客"
   />
-  <meta property="og:url" content="https://curious-energy.github.io/post/test1/" />
+  <meta property="og:url" content="https://curious-energy.github.io/post/remote_server/" />
   <meta
     property="og:site_name"
     content="Machine Space"
   />
   <meta
     property="og:image"
-    content="/"
+    content="/false"
   />
   <meta property="article:author" content="Curious Enegry" />
-  <meta property="article:published_time" content="2025-02-20T17:55:43&#43;08:00" />
-  <meta property="article:modified_time" content="2025-02-20T17:55:43&#43;08:00" />
+  <meta property="article:published_time" content="2025-02-21T18:53:45&#43;08:00" />
+  <meta property="article:modified_time" content="2025-02-21T18:53:45&#43;08:00" />
+  
+    <meta property="article:tag" content="云服务器" />
   
   
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:image" content="/" />
+  <meta name="twitter:image" content="/false" />
   
   
   
@@ -321,7 +323,7 @@
       
     </picture>
     
-      <img fetchpriority="high" src="/images/c_g.jpg" alt="一些网站使用上的备忘录">
+      <img fetchpriority="high" src="/images/c_g.jpg" alt="远程同步的一些事项">
     
   
 
@@ -335,7 +337,7 @@
   
         
           <a href="/" id="logo">
-            <h1 data-aos="slide-up">一些网站使用上的备忘录</h1>
+            <h1 data-aos="slide-up">远程同步的一些事项</h1>
           </a>
         
       
@@ -368,10 +370,11 @@
   <div class="sidebar-toc-wrapper toc-div-class">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#子命令">子命令</a></li>
-    <li><a href="#代码测试">代码测试</a></li>
-    <li><a href="#公式测试">公式测试</a></li>
+    <li><a href="#同步的作用">同步的作用</a></li>
+    <li><a href="#实现方式">实现方式</a></li>
+    <li><a href="#原生的实现方法">原生的实现方法</a></li>
     <li><a href="#其他">其他</a></li>
+    <li><a href="#重新开始的难度">重新开始的难度</a></li>
   </ul>
 </nav>
   </div>
@@ -530,20 +533,34 @@
     <div class="article-meta">
       <div class="article-date">
   <a
-    href="https://curious-energy.github.io/post/test1/"
+    href="https://curious-energy.github.io/post/remote_server/"
     class="article-date-link"
     data-aos="zoom-in"
   >
-    <time datetime="2025-02-20 17:55:43 &#43;0800 CST" itemprop="datePublished"
-      >2025-02-20</time
+    <time datetime="2025-02-21 18:53:45 &#43;0800 CST" itemprop="datePublished"
+      >2025-02-21</time
     >
     <time style="display: none;" id="post-update-time"
-      >2025-02-20</time
+      >2025-02-21</time
     >
   </a>
 </div>
 
       <div class="article-category">
+  
+    <a
+      class="article-category-link"
+      href="/categories/%e8%bf%9c%e7%a8%8b%e5%90%8c%e6%ad%a5"
+      data-aos="zoom-in"
+      >远程同步</a
+    >
+  
+    <a
+      class="article-category-link"
+      href="/categories/like"
+      data-aos="zoom-in"
+      >LIKE</a
+    >
   
 </div>
 
@@ -553,46 +570,53 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
       
-        <p>奇怪的一点，目录的显示必须是##开始，#是无效果的。</p>
-<p>创建一个新的博客文章, x为新文章名字，最好和内容有一点关联性，我怕找不到了。
-<code>hugo new content post/x.md</code></p>
-<p>写完后保存就行，一般情况下我是在其他markdown软件下写好才会往这边复制，所以问题不大，注意一下兼容性就行。</p>
-<p>图床目前使用这个<a href="https://picx.xpoet.cn/">网站</a>,测试了一下还是很好用的，至少不怕跑路而且免费。</p>
-<p><code>hugo server</code>可以用来预览页面，正式发布前使用<code>hugo</code>生成发布内容public下。</p>
-<p>接着使用<code>npm run algolia</code>来更新一下站内搜索的索引。</p>
-<p>本地的所有事项完成后，开始上传内容到github.</p>
-<p>正常情况下，<code>git add .</code>, <code>git commit -m &quot;some logs...&quot;</code>, <code>git push</code>就可以了。</p>
-<p>PS：新的地方可以使用git clone这些来拉取网站原内容。</p>
-<h2 id="子命令">
-<a class="header-anchor" href="#%e5%ad%90%e5%91%bd%e4%bb%a4"></a>
-子命令
-</h2><p>重置用户登陆失败状态：</p>
-<p><code>sudo pam_tally2 --user testuser --reset</code></p>
-<p>查看秘密过期状态：</p>
-<p><code>sudo chage -l testuser</code></p>
-<p>改变密码使用时间和提示修改：</p>
-<p><code>sudo chage -M 150 -W 30 testuser</code></p>
-<p>督促修改秘密</p>
-<p><code>chage -d '2023-10-01' testuser</code></p>
-<h2 id="代码测试">
-<a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e6%b5%8b%e8%af%95"></a>
-代码测试
-</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;this is test&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><h2 id="公式测试">
-<a class="header-anchor" href="#%e5%85%ac%e5%bc%8f%e6%b5%8b%e8%af%95"></a>
-公式测试
-</h2>$$
-\int_0^\infty e^x dx
-$$<h2 id="其他">
+        <h2 id="同步的作用">
+<a class="header-anchor" href="#%e5%90%8c%e6%ad%a5%e7%9a%84%e4%bd%9c%e7%94%a8"></a>
+同步的作用
+</h2><p>使用同步主要是在多个设备间进行内容同步，类似博客这种作用，但更为私人。
+我的主要应用场景是同步我Obsidian的文档，如果没有同步，这个文档的限制是很大的。
+电脑不在身边，如果想记录一些东西，只能放在手机上或者云笔记。</p>
+<p>这时候问题就来了：</p>
+<ul>
+<li>在其他设备记录的内容同步必须是靠复制粘贴，费时费力，而且无法快速整合内容。</li>
+<li>一些在电脑上记录的文件需要查阅，手机上是没有对应内容的。</li>
+<li>云笔记便可以解决上述两个问题，甚至可以分享给第三方，但云笔记上随着内容的增加，做备份就很困难了。</li>
+<li>云上的内容本应该是我们自己生产的，但用户很难本地拥有了。</li>
+<li>所以目前使用语雀作为第三方分享共同编辑的一个平台，以及少量的重要内容备份。</li>
+<li>但本地是内容生产的主要阵地，Obsidian+插件Remotely Save可以做到这个。</li>
+</ul>
+<p>这时候，你会发现，问题又出在自己解决问题的复杂度上，虽然可以我认为做这些事情还是比较简单的，但需要花费的维护搭建成本对于大部分人来说还是代价比较高的。
+（嗯，这时候需要认真分析一下自己的需求，选择适合自己的方案。）</p>
+<h2 id="实现方式">
+<a class="header-anchor" href="#%e5%ae%9e%e7%8e%b0%e6%96%b9%e5%bc%8f"></a>
+实现方式
+</h2><p>看到这里，可能是要看我如何实现的笔记同步。</p>
+<p>原理本质上就是，Obsidian的本地存储库，这个安装后就有了，没有压力。
+重点在WebDav上面，通过WebDav来进行文件的同步。</p>
+<p>实现的方式有以下两个：（我都有使用）</p>
+<ol>
+<li>申请一些云盘厂商提供的WebDav服务，这个比自己实现的要稳定。我使用的是https://infini-cloud.net/新人可以想办法得到20G的免费空间。然后申请需要使用的api就行。</li>
+<li>本地搭建一个云盘服务，同时就兼容WebDav，熟悉NAS的人特别适合这个方法。我的实现方式有一些不同。</li>
+</ol>
+<h2 id="原生的实现方法">
+<a class="header-anchor" href="#%e5%8e%9f%e7%94%9f%e7%9a%84%e5%ae%9e%e7%8e%b0%e6%96%b9%e6%b3%95"></a>
+原生的实现方法
+</h2><p>我比较喜欢linux系统上搞事情，一是很熟悉，二是扩展性很高，不受限制。
+操作系统直接使用Ubuntu，工具包很全。安装zfs文件系统，通过文件系统将本地的硬盘整合为一个大盘进行管理，甚至盘够多的话可以做raid系统容灾备份。将系统里划分一块空间来做云盘服务，这里我对一些关键的文件进行了rsync命令的定时备份操作，这些重要文件是不能丢失的（注意，硬件上最好可以分开）。</p>
+<p>云盘服务使用了Cloudreve来实现，跟着官方配置参数就好。创建好的云盘就本身支持WebDav.</p>
+<p>最后需要有一个公网ip，这个每年阿里云或者其他服务商都有价格比较便宜的云服务器（70到90元一年）就有了一个公网ip，如果可以从自家宽带申请下公网ip更好，甚至可以找一些免费的反代服务（例如natfrp）</p>
+<p>在本地和服务器端使用原生的frp搭建就可以拥有全网同步功能了。</p>
+<h2 id="其他">
 <a class="header-anchor" href="#%e5%85%b6%e4%bb%96"></a>
 其他
-</h2><blockquote>
-<p>不知道这个可以不可以正常使用</p>
-</blockquote>
+</h2><p>因为组件除了依赖公网ip，一般大厂的服务很稳，所以大部分都是本地出问题，而本地的部署一般在手边，很容易就解决了，所以整套方案对个人来说很稳定，我这边经历过断网，本地电脑断电这些问题，文件也没有丢失。</p>
+<p>同时，本地的这个Ubuntu电脑是一个笔记本，还挂着pt共享等服务。云端的服务器如果有其他需求也可以互不干扰。</p>
+<p>要注意实现的时候，zfs文件系统应该要覆盖盘上的内容的，所以相关命令小心，做好文件备份。</p>
+<h2 id="重新开始的难度">
+<a class="header-anchor" href="#%e9%87%8d%e6%96%b0%e5%bc%80%e5%a7%8b%e7%9a%84%e9%9a%be%e5%ba%a6"></a>
+重新开始的难度
+</h2><p>如上面所述，云服务器上需要一个frp服务，这个有很多一键安装的脚本，然后开启systemd服务就可以。
+本地硬盘，但一般不移动，风险较低。这里最薄弱的可能是本地网络，需要查看网络连接情况。云盘和linux本身长期运行很稳定。</p>
 
       
     </div>
@@ -611,13 +635,13 @@ $$<h2 id="其他">
   
   
     <p>
-      <strong><span class="icon-link icon"></span>本文链接：</strong><a href="https://curious-energy.github.io/post/test1/">https://curious-energy.github.io/post/test1/</a>
+      <strong><span class="icon-link icon"></span>本文链接：</strong><a href="https://curious-energy.github.io/post/remote_server/">https://curious-energy.github.io/post/remote_server/</a>
     </p>
   
   
   
   
-    <p><strong><span class="icon-calendar icon"></span>本文修改时间：</strong>2025-02-20 17:55:43</p>
+    <p><strong><span class="icon-calendar icon"></span>本文修改时间：</strong>2025-02-21 18:53:45</p>
   
   
     <p>
@@ -642,12 +666,12 @@ $$<h2 id="其他">
       
         <a
           data-aos="zoom-in"
-          href="https://curious-energy.github.io/post/test1/#comments"
+          href="https://curious-energy.github.io/post/remote_server/#comments"
           class="article-comment-link"
         >
           <span
             class="post-comments-count waline-comment-count"
-            data-path="https//curious-energy.github.io/post/test1/"
+            data-path="https//curious-energy.github.io/post/remote_server/"
             itemprop="commentCount"
           ></span>
           留言
@@ -665,13 +689,22 @@ $$<h2 id="其他">
         >
           <span
             class="waline-pageview-count"
-            data-path="/post/test1/"
+            data-path="/post/remote_server/"
             >0</span
           >
           <em class="post-meta-item-text">阅读量</em>
         </span>
       
       <ul class="article-tag-list" itemprop="keywords">
+  
+    <li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/%e4%ba%91%e6%9c%8d%e5%8a%a1%e5%99%a8"
+        rel="tag"
+        >云服务器</a
+      >
+    </li>
   
 </ul>
 
@@ -684,14 +717,12 @@ $$<h2 id="其他">
     data-aos="fade-up"
   >
     
-
-    
-      <div class="article-nav-link-wrap article-nav-link-right">
+      <div class="article-nav-link-wrap article-nav-link-left">
         
           
           
             <img
-              data-src="https://github.com/curious-energy/picx-images-hosting/raw/master/%e4%b8%8d%e5%8f%af%e8%83%bd%e5%9b%be%e5%bd%a2.8dx00f4kz8.webp"
+              data-src="https://github.com/curious-energy/picx-images-hosting/raw/master/wallhaven-2yrqrx.7snce4v42r.webp"
               data-sizes="auto"
               alt="无人机协作调研"
               class="lazyload"
@@ -699,13 +730,15 @@ $$<h2 id="其他">
           
         
         <a href="https://curious-energy.github.io/post/uav_swarm_tech_survey/"></a>
-        <div class="article-nav-caption">后一篇</div>
+        <div class="article-nav-caption">前一篇</div>
         <h3 class="article-nav-title">
           
             无人机协作调研
           
         </h3>
       </div>
+    
+
     
   </nav>
 
@@ -827,10 +860,11 @@ $$<h2 id="其他">
   <div class="sidebar-toc-wrapper toc-div-class">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#子命令">子命令</a></li>
-    <li><a href="#代码测试">代码测试</a></li>
-    <li><a href="#公式测试">公式测试</a></li>
+    <li><a href="#同步的作用">同步的作用</a></li>
+    <li><a href="#实现方式">实现方式</a></li>
+    <li><a href="#原生的实现方法">原生的实现方法</a></li>
     <li><a href="#其他">其他</a></li>
+    <li><a href="#重新开始的难度">重新开始的难度</a></li>
   </ul>
 </nav>
   </div>
@@ -1195,9 +1229,9 @@ $$<h2 id="其他">
       <script data-pjax>
         window.REIMU_POST = {
           author: "Curious Enegry",
-          title: "一些网站使用上的备忘录",
-          url: "https:\/\/curious-energy.github.io\/post\/test1\/",
-          description: "奇怪的一点，目录的显示必须是##开始，#是无效果的。\n创建一个新的博客文章, x为新文章名字，最好和内容有一点关联性，我怕找不到了。 hugo new content post\/x.md\n写完后保存就行，一般情况下我是在其他markdown软件下写好才会往这边复制，所以问题不大，注意一下兼容性就行。\n图床目前使用这个网站,测试了一下还是很好用的，至少不怕跑路而且免费。\nhugo server可以用来预览页面，正式发布前使用hugo生成发布内容public下。\n接着使用npm run algolia来更新一下站内搜索的索引。\n本地的所有事项完成后，开始上传内容到github.\n正常情况下，git …",
+          title: "远程同步的一些事项",
+          url: "https:\/\/curious-energy.github.io\/post\/remote_server\/",
+          description: "\r同步的作用\r使用同步主要是在多个设备间进行内容同步，类似博客这种作用，但更为私人。 我的主要应用场景是同步我Obsidian的文档，如果没有同步，这个文档的限制是很大的。 电脑不在身边，如果想记录一些东西，只能放在手机上或者云笔记。\n这时候问题就来了：\n在其他设备记录的内容同步必须是靠复制粘贴，费时费力，而且无法快速整合内容。 一些在电脑上记录的文件需要查阅，手机上是没有对应内容的。 云笔记便可以解决上述两个问题，甚至可以分享给第三方，但云笔记上随着内容的增加，做备份就很困难了。 云上的内容本应该是我们自己生产的，但用户很难本地拥有了。 所以目前使用语雀作为第三方分享共同编辑的一个平台，以及 …",
           cover: "https:\/\/curious-energy.github.io\/images\/c_g.jpg",
         };
       </script>
