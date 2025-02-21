@@ -21,7 +21,7 @@
   
 
 <title>
-  Test1 | Curious Enegry
+  一些网站使用上的备忘录 | Curious Enegry
 </title>
 <meta
   name="description"
@@ -109,7 +109,7 @@
 
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Test1 | Curious Enegry" />
+  <meta property="og:title" content="一些网站使用上的备忘录 | Curious Enegry" />
   <meta
     property="og:description"
     content="一个私人博客"
@@ -321,7 +321,7 @@
       
     </picture>
     
-      <img fetchpriority="high" src="/images/c_g.jpg" alt="Test1">
+      <img fetchpriority="high" src="/images/c_g.jpg" alt="一些网站使用上的备忘录">
     
   
 
@@ -335,7 +335,7 @@
   
         
           <a href="/" id="logo">
-            <h1 data-aos="slide-up">Test1</h1>
+            <h1 data-aos="slide-up">一些网站使用上的备忘录</h1>
           </a>
         
       
@@ -369,6 +369,9 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#子命令">子命令</a></li>
+    <li><a href="#代码测试">代码测试</a></li>
+    <li><a href="#公式测试">公式测试</a></li>
+    <li><a href="#其他">其他</a></li>
   </ul>
 </nav>
   </div>
@@ -550,10 +553,17 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
       
-        <h1 id="文本测试">
-<a class="header-anchor" href="#%e6%96%87%e6%9c%ac%e6%b5%8b%e8%af%95"></a>
-文本测试
-</h1><h2 id="子命令">
+        <p>奇怪的一点，目录的显示必须是##开始，#是无效果的。</p>
+<p>创建一个新的博客文章, x为新文章名字，最好和内容有一点关联性，我怕找不到了。
+<code>hugo new content post/x.md</code></p>
+<p>写完后保存就行，一般情况下我是在其他markdown软件下写好才会往这边复制，所以问题不大，注意一下兼容性就行。</p>
+<p>图床目前使用这个<a href="https://picx.xpoet.cn/">网站</a>,测试了一下还是很好用的，至少不怕跑路而且免费。</p>
+<p><code>hugo server</code>可以用来预览页面，正式发布前使用<code>hugo</code>生成发布内容public下。</p>
+<p>接着使用<code>npm run algolia</code>来更新一下站内搜索的索引。</p>
+<p>本地的所有事项完成后，开始上传内容到github.</p>
+<p>正常情况下，<code>git add .</code>, <code>git commit -m &quot;some logs...&quot;</code>, <code>git push</code>就可以了。</p>
+<p>PS：新的地方可以使用git clone这些来拉取网站原内容。</p>
+<h2 id="子命令">
 <a class="header-anchor" href="#%e5%ad%90%e5%91%bd%e4%bb%a4"></a>
 子命令
 </h2><p>重置用户登陆失败状态：</p>
@@ -564,20 +574,23 @@
 <p><code>sudo chage -M 150 -W 30 testuser</code></p>
 <p>督促修改秘密</p>
 <p><code>chage -d '2023-10-01' testuser</code></p>
-<h1 id="代码测试">
+<h2 id="代码测试">
 <a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e6%b5%8b%e8%af%95"></a>
 代码测试
-</h1><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;this is test&#34;</span><span class="p">)</span>
-</span></span></code></pre></div><h1 id="公式测试">
+</span></span></code></pre></div><h2 id="公式测试">
 <a class="header-anchor" href="#%e5%85%ac%e5%bc%8f%e6%b5%8b%e8%af%95"></a>
 公式测试
-</h1>$$
+</h2>$$
 \int_0^\infty e^x dx
-$$<blockquote>
+$$<h2 id="其他">
+<a class="header-anchor" href="#%e5%85%b6%e4%bb%96"></a>
+其他
+</h2><blockquote>
 <p>不知道这个可以不可以正常使用</p>
 </blockquote>
 
@@ -644,7 +657,7 @@ $$<blockquote>
           
           
             <img
-              data-src="https://github.com/curious-energy/picx-images-hosting/raw/master/wallhaven-p9qvge.1e8qijdyf1.webp"
+              data-src="https://github.com/curious-energy/picx-images-hosting/raw/master/%e4%b8%8d%e5%8f%af%e8%83%bd%e5%9b%be%e5%bd%a2.8dx00f4kz8.webp"
               data-sizes="auto"
               alt="无人机协作调研"
               class="lazyload"
@@ -726,7 +739,7 @@ $$<blockquote>
       <div>
         <span class="icon-brush"
           >&nbsp;
-            167
+            194
           </span
         >
         &nbsp;|&nbsp;
@@ -778,6 +791,9 @@ $$<blockquote>
     <nav id="TableOfContents">
   <ul>
     <li><a href="#子命令">子命令</a></li>
+    <li><a href="#代码测试">代码测试</a></li>
+    <li><a href="#公式测试">公式测试</a></li>
+    <li><a href="#其他">其他</a></li>
   </ul>
 </nav>
   </div>
@@ -1142,9 +1158,9 @@ $$<blockquote>
       <script data-pjax>
         window.REIMU_POST = {
           author: "Curious Enegry",
-          title: "Test1",
+          title: "一些网站使用上的备忘录",
           url: "https:\/\/curious-energy.github.io\/post\/test1\/",
-          description: "\r文本测试\r子命令\r重置用户登陆失败状态：\nsudo pam_tally2 --user testuser --reset\n查看秘密过期状态：\nsudo chage -l testuser\n改变密码使用时间和提示修改：\nsudo chage -M 150 -W 30 testuser\n督促修改秘密\nchage -d \u00272023-10-01\u0027 testuser\n代码测试\rimport os os.listdir() print(\u0026#34;this is test\u0026#34;) 公式测试\r$$ \\int_0^\\infty e^x dx $$ 不知道这个可以不可以正常使用\n",
+          description: "奇怪的一点，目录的显示必须是##开始，#是无效果的。\n创建一个新的博客文章, x为新文章名字，最好和内容有一点关联性，我怕找不到了。 hugo new content post\/x.md\n写完后保存就行，一般情况下我是在其他markdown软件下写好才会往这边复制，所以问题不大，注意一下兼容性就行。\n图床目前使用这个网站,测试了一下还是很好用的，至少不怕跑路而且免费。\nhugo server可以用来预览页面，正式发布前使用hugo生成发布内容public下。\n接着使用npm run algolia来更新一下站内搜索的索引。\n本地的所有事项完成后，开始上传内容到github.\n正常情况下，git …",
           cover: "https:\/\/curious-energy.github.io\/images\/c_g.jpg",
         };
       </script>
