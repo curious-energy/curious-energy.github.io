@@ -2,26 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://curious-energy.github.io/</loc>
     <lastmod>2025-02-21T17:23:49+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/uav_swarm_tech_survey/</loc>
+    <loc>https://curious-energy.github.io/post/uav_swarm_tech_survey/</loc>
     <lastmod>2025-02-21T17:23:49+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/post/test1/</loc>
+    <loc>https://curious-energy.github.io/post/test1/</loc>
     <lastmod>2025-02-20T17:55:43+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/archives/</loc>
+    <loc>https://curious-energy.github.io/archives/</loc>
     <lastmod>2022-07-26T21:46:25+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://curious-energy.github.io/about/</loc>
     <lastmod>2025-02-21T16:45:52+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/friend/</loc>
+    <loc>https://curious-energy.github.io/friend/</loc>
     <lastmod>2025-02-21T16:45:52+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://curious-energy.github.io/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://curious-energy.github.io/tags/</loc>
   </url>
 </urlset>
