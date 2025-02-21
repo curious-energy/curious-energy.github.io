@@ -173,6 +173,13 @@
 
 
 
+  
+
+
+  <link rel="stylesheet" href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css" />
+
+
+
 
 
 
@@ -580,14 +587,16 @@ $$<blockquote>
       
 
       
+
+      
         <a
           data-aos="zoom-in"
           href="http://localhost:1313/post/test1/#comments"
           class="article-comment-link"
         >
           <span
-            class="post-comments-count valine-comment-count"
-            data-xid="http//localhost1313/post/test1/"
+            class="post-comments-count waline-comment-count"
+            data-path="http//localhost1313/post/test1/"
             itemprop="commentCount"
           ></span>
           留言
@@ -601,15 +610,15 @@ $$<blockquote>
       
         <span
           data-aos="zoom-in"
-          id="/post/test1/"
-          class="leancloud_visitors article-visitor-link"
-          data-flag-title="Test1"
+          class="article-visitor-link"
         >
-          <span class="leancloud-visitors-count">0</span>
+          <span
+            class="waline-pageview-count"
+            data-path="/post/test1/"
+            >0</span
+          >
           <em class="post-meta-item-text">阅读量</em>
         </span>
-      
-
       
       <ul class="article-tag-list" itemprop="keywords">
   
@@ -624,28 +633,28 @@ $$<blockquote>
     data-aos="fade-up"
   >
     
-      <div class="article-nav-link-wrap article-nav-link-left">
+
+    
+      <div class="article-nav-link-wrap article-nav-link-right">
         
           
           
             <img
-              data-src="http://47.108.59.239:12365/f/VXIp/%E8%89%B2%E5%BD%A9%E8%B0%B7.jpg"
+              data-src="https://github.com/curious-energy/picx-images-hosting/raw/master/wallhaven-qz1k1l.4n7uf70p4b.webp"
               data-sizes="auto"
-              alt="Hello World"
+              alt="无人机协作调研"
               class="lazyload"
             />
           
         
-        <a href="http://localhost:1313/post/hello/"></a>
-        <div class="article-nav-caption">前一篇</div>
+        <a href="http://localhost:1313/post/uav_swarm_tech_survey/"></a>
+        <div class="article-nav-caption">后一篇</div>
         <h3 class="article-nav-title">
           
-            Hello World
+            无人机协作调研
           
         </h3>
       </div>
-    
-
     
   </nav>
 
@@ -653,13 +662,13 @@ $$<blockquote>
   
 </article>
 
-  <section
+
+
+  <div
     id="comments"
-    class="vcomment"
+    class="wcomment"
     data-aos="fade-up"
-  ></section>
-
-
+  ></div>
 
 
 
@@ -713,7 +722,7 @@ $$<blockquote>
       <div>
         <span class="icon-brush"
           >&nbsp;
-            44
+            167
           </span
         >
         &nbsp;|&nbsp;
@@ -1185,52 +1194,27 @@ $$<blockquote>
 
 
 
-  
-
-  
-  
-  
-  
-  
-  
-  <script
-    src="https://npm.webcache.cn/valine@1.5.1/dist/Valine.min.js"
-    
-    
-    data-pjax
-    
-    integrity="sha384-3ma91AExDeMAZ1rjTjaP8V2A2obQE&#43;s5ltKRwYlwdpArz9xVbp0tF3b0VV2ACNPn" crossorigin="anonymous"
-  ></script>
 
 
-  <script data-pjax>
-    var GUEST_INFO = ['nick', 'mail', 'link'];
-    var guest_info = 'nick,mail,link'.split(',').filter((item) => {
-      return GUEST_INFO.indexOf(item) > -1
+<script data-pjax type="module">
+  const { init } = await safeImport('https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs', 'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5');
+  if(_$('.wcomment')) {
+    window.walineInstance = init({
+      el: '.wcomment',
+      serverURL: 'https:\/\/waline-xi-lilac.vercel.app\/',
+      lang: 'zh-CN',
+      locale: JSON.parse("{}"),
+      emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+      meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+      requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+      wordLimit:  0 ,
+      comment: true,
+      pageSize:  10 ,
+      dark: 'html[data-theme="dark"]',
+      pageview:  true ,
     });
-    var recordIP = JSON.parse('true');
-    var highlight = JSON.parse('true');
-    var visitor = JSON.parse('true');
-
-    if (window.Valine) {
-      new Valine({
-        el: '.vcomment',
-        appId: "s6RSgxTFY9dorFo2atdbI74K-MdYXbMMI",
-        appKey: "YI6fhKQyuT7yKG4KVLN1ibJe",
-        placeholder: "Write something~",
-        pageSize: '10',
-        avatar: 'mp',
-        lang: 'zh-cn',
-        recordIP: recordIP,
-        highlight: highlight,
-        visitor: visitor,
-        requiredFields: guest_info,
-        path: window.location.pathname
-      });
-    }
-  </script>
-
-
+  }
+</script>
 
 
 

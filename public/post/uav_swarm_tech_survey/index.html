@@ -21,7 +21,7 @@
   
 
 <title>
-  Hello World | Curious Enegry
+  无人机协作调研 | Curious Enegry
 </title>
 <meta
   name="description"
@@ -107,12 +107,12 @@
 
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Hello World | Curious Enegry" />
+  <meta property="og:title" content="无人机协作调研 | Curious Enegry" />
   <meta
     property="og:description"
     content="一个私人博客"
   />
-  <meta property="og:url" content="http://localhost:1313/post/hello/" />
+  <meta property="og:url" content="http://localhost:1313/post/uav_swarm_tech_survey/" />
   <meta
     property="og:site_name"
     content="Machine Space"
@@ -122,8 +122,8 @@
     content="/"
   />
   <meta property="article:author" content="Curious Enegry" />
-  <meta property="article:published_time" content="2023-03-15T11:00:00-07:00" />
-  <meta property="article:modified_time" content="2023-03-15T11:00:00-07:00" />
+  <meta property="article:published_time" content="2025-02-21T17:23:49&#43;08:00" />
+  <meta property="article:modified_time" content="2025-02-21T17:23:49&#43;08:00" />
   
   
   <meta name="twitter:card" content="summary" />
@@ -170,6 +170,13 @@
     onload="this.onload=null;this.rel='stylesheet'"
   />
 
+
+
+
+  
+
+
+  <link rel="stylesheet" href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css" />
 
 
 
@@ -310,7 +317,7 @@
       
     </picture>
     
-      <img fetchpriority="high" src="/images/c_g.jpg" alt="Hello World">
+      <img fetchpriority="high" src="/images/c_g.jpg" alt="无人机协作调研">
     
   
 
@@ -324,7 +331,7 @@
   
         
           <a href="/" id="logo">
-            <h1 data-aos="slide-up">Hello World</h1>
+            <h1 data-aos="slide-up">无人机协作调研</h1>
           </a>
         
       
@@ -512,15 +519,15 @@
     <div class="article-meta">
       <div class="article-date">
   <a
-    href="http://localhost:1313/post/hello/"
+    href="http://localhost:1313/post/uav_swarm_tech_survey/"
     class="article-date-link"
     data-aos="zoom-in"
   >
-    <time datetime="2023-03-15 11:00:00 -0700 -0700" itemprop="datePublished"
-      >2023-03-15</time
+    <time datetime="2025-02-21 17:23:49 &#43;0800 CST" itemprop="datePublished"
+      >2025-02-21</time
     >
     <time style="display: none;" id="post-update-time"
-      >2023-03-15</time
+      >2025-02-21</time
     >
   </a>
 </div>
@@ -535,7 +542,117 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
       
-        <p>💘 博麗 霊夢 💘</p>
+        <blockquote>
+<p>以下的内容来源于徐浩博士的一个讲座。</p>
+</blockquote>
+<p>Xu Hao(徐浩)</p>
+<h1 id="主要内容">
+<a class="header-anchor" href="#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9"></a>
+主要内容：
+</h1><ol>
+<li>从无人机单机智能到无人机集群</li>
+<li>用于无人机集群的去中心化视觉一惯性-UWB相对定位</li>
+<li>Omni-Swarm:具有全局一致性的去中心化全向视觉-惯性-UWB无人机集群状态估计</li>
+<li>分布式协同SLAM(Distributed Collaborative SLAM)基础和BDPGO(平衡分布式位姿图优化)</li>
+<li>$D^2$SLAM:去中心化和分布式无人机协同定位与建图(CSLAM)系统</li>
+<li>总结和未来工作</li>
+</ol>
+<h1 id="主要依托的软硬件情况">
+<a class="header-anchor" href="#%e4%b8%bb%e8%a6%81%e4%be%9d%e6%89%98%e7%9a%84%e8%bd%af%e7%a1%ac%e4%bb%b6%e6%83%85%e5%86%b5"></a>
+主要依托的软硬件情况：
+</h1><p>集群通讯（规模大后很复杂）wifi信息广播，mesh网络路由</p>
+<p>中心式，依赖中心 地面站</p>
+<p>区分去中心化，分布式
+去中心化，没有中心节点但需要
+分布式，可以有中心节点，分担计算和探索</p>
+<p>联合定位，相对定位（避障）
+（互相看到，可以实现相对定位精度提升）
+全局一致性（地图）</p>
+<p>单目初始化 刚开始需要合适运动</p>
+<p>uwb超宽带通讯，脉冲
+测距，无定向信息，精度10厘米左右内
+容易被遮挡和电子干扰
+粗略定位</p>
+<p>wifi, ns级别
+无线随意网络 (Wireless ad hoc network)</p>
+<p>vins-fusion实时VIO作为基础</p>
+<p>无人机集群，无人机间很相似</p>
+<p>（uwb测量需要相对运动）在uwb的粗略定位上，使用yolov3来对无人机进行区分（识别，跟踪），结合视觉信息来使得定位达到几厘米定位误差。</p>
+<p>VIO长时间会飘，导致无法全局一致性</p>
+<h1 id="omni-swarm-鱼眼相机上下两个每个fov大约235扩大观察范围地面特征点来快速初始化和全局定位">
+<a class="header-anchor" href="#omni-swarm-%e9%b1%bc%e7%9c%bc%e7%9b%b8%e6%9c%ba%e4%b8%8a%e4%b8%8b%e4%b8%a4%e4%b8%aa%e6%af%8f%e4%b8%aafov%e5%a4%a7%e7%ba%a6235%e6%89%a9%e5%a4%a7%e8%a7%82%e5%af%9f%e8%8c%83%e5%9b%b4%e5%9c%b0%e9%9d%a2%e7%89%b9%e5%be%81%e7%82%b9%e6%9d%a5%e5%bf%ab%e9%80%9f%e5%88%9d%e5%a7%8b%e5%8c%96%e5%92%8c%e5%85%a8%e5%b1%80%e5%ae%9a%e4%bd%8d"></a>
+Omni-Swarm, 鱼眼相机（上下两个，每个FOV大约235°）扩大观察范围，地面特征点来快速初始化和全局定位。
+</h1><p>VIO: vins-fisheye
+mobileNetVLAD全局描述子(关键帧)
+Superpoint特征描述子
+Faiss建立全局描述子数据库
+视觉前端适合使用神经网络，后端进行图优化</p>
+<h1 id="racer去中心化多无人机系统的快速协作探索">
+<a class="header-anchor" href="#racer%e5%8e%bb%e4%b8%ad%e5%bf%83%e5%8c%96%e5%a4%9a%e6%97%a0%e4%ba%ba%e6%9c%ba%e7%b3%bb%e7%bb%9f%e7%9a%84%e5%bf%ab%e9%80%9f%e5%8d%8f%e4%bd%9c%e6%8e%a2%e7%b4%a2"></a>
+RACER:去中心化多无人机系统的快速协作探索
+</h1><p>Zhou Boyu（）
+realscene双目版本
+优势：达到了精准的状态估计和全局一致性保障，基于地图的快速初始化
+劣势：计算冗余，重复计算，对于大规模100架计算不过来
+全局一致性（地图上使用），对于远距离的无人机间，具体是多远并不重要。</p>
+<p>Distributed mapping with privacy and communication constraints.</p>
+<p>BDPGO: balanced distributed pose graph optimization framework for swarm robotics
+分布式优化，平衡计算量，计算时间优化</p>
+<p>缺点：信息会有泄露</p>
+<h1 id="d2slam-无人机协作能力拆分问题">
+<a class="header-anchor" href="#d2slam-%e6%97%a0%e4%ba%ba%e6%9c%ba%e5%8d%8f%e4%bd%9c%e8%83%bd%e5%8a%9b%e6%8b%86%e5%88%86%e9%97%ae%e9%a2%98"></a>
+$D^2$SLAM: 无人机协作能力，拆分问题
+</h1><p>传感器的尺寸大小重量和能源限制（SwaP）</p>
+<p>近场状态估计（Near-field状态估计）
+准确的相对状态估计，公共的视场，高带宽</p>
+<p>离得远的时候不需要很高的相对定位精度，更重要的是全局地图一致性。</p>
+<p>$D^2$VINS在长距离每个无人机都飘了，通过$D^2$PGO来进行相对距离判断</p>
+<p>混合前端：例如草地场景，墙面（有一些纹理）</p>
+<ul>
+<li>superpoint用于多视角和多无人机间的匹配</li>
+<li>LK optical flow（光流）：避免在稀疏特征环境下的自身运动估计失败</li>
+</ul>
+<p>如果特征点遇到稀疏时，退化到VIO，此时单机可以坚持几分钟（1分钟没问题）到特征密集的地方
+（雷达：狭窄的管道）</p>
+<p>节省带宽，使用全局描述子，离得很近时就可以频繁交换信息。</p>
+<p>point consensus: 特征点共识：关键帧姿势被分成不相交的集合。地标点的状态在代理之间共享。
+需要共享点的状态：1. 巨大的通信量。2. 不适合逆深度参数化。</p>
+<p>摄像头共识：1. 地标点被分成不相交的集合。2. 摄像头状态在代理之间共享 3. 更低通的信需求。
+不适用于VIO，可能会将姿态分割给其他无人机。如果通信中断，不够稳健！</p>
+<p>增加观测一致性 -&gt;
+改进的相机共识:</p>
+<ul>
+<li>使用发现时间来分区特征点: 去中心化</li>
+<li>引入仅自我运动特征和IMU残留，以允许局部状态在局部求解器中具有副本。</li>
+<li>通讯中断时，退化为单无人机VIO:飞行安全。</li>
+</ul>
+<p>对于双目上的应用，当FOV重叠很差的时候，就会很差。（算力充裕的话，上机建议采用4目）</p>
+<p>缺点：通讯问题，空中宽带资源宝贵（定向发送，跳频技术）</p>
+<h1 id="未来发展的方向">
+<a class="header-anchor" href="#%e6%9c%aa%e6%9d%a5%e5%8f%91%e5%b1%95%e7%9a%84%e6%96%b9%e5%90%91"></a>
+未来发展的方向：
+</h1><ul>
+<li>大规模环境；</li>
+<li>当前3-5实际测试，10仿真，100-1000架协调；</li>
+<li>多相机，多机组合，机器传感协同.</li>
+</ul>
+<h1 id="其他问题">
+<a class="header-anchor" href="#%e5%85%b6%e4%bb%96%e9%97%ae%e9%a2%98"></a>
+其他问题
+</h1><p>双目相机，3-5米能保证精度。</p>
+<p>对于IMU的要求并不高（如6500）。（scale，高帧率的连续测量）</p>
+<p>飞控NXT PX4
+穿越机大电流的干扰
+受到碳纤维的干扰，对imu进行滤波，尤其是高频。</p>
+<p>无线电不太准，视觉比较准。</p>
+<p>机器人研究的功底：</p>
+<ul>
+<li>数学理论创新；</li>
+<li>工程实现，故事讲明白；</li>
+<li>实际验证，仿真到现实。</li>
+</ul>
+<p>顶会，问题有价值，做了实验。
+做了仿真，先扣一分，看理论创新方面。</p>
 
       
     </div>
@@ -547,14 +664,16 @@
       
 
       
+
+      
         <a
           data-aos="zoom-in"
-          href="http://localhost:1313/post/hello/#comments"
+          href="http://localhost:1313/post/uav_swarm_tech_survey/#comments"
           class="article-comment-link"
         >
           <span
-            class="post-comments-count valine-comment-count"
-            data-xid="http//localhost1313/post/hello/"
+            class="post-comments-count waline-comment-count"
+            data-path="http//localhost1313/post/uav_swarm_tech_survey/"
             itemprop="commentCount"
           ></span>
           留言
@@ -568,15 +687,15 @@
       
         <span
           data-aos="zoom-in"
-          id="/post/hello/"
-          class="leancloud_visitors article-visitor-link"
-          data-flag-title="Hello World"
+          class="article-visitor-link"
         >
-          <span class="leancloud-visitors-count">0</span>
+          <span
+            class="waline-pageview-count"
+            data-path="/post/uav_swarm_tech_survey/"
+            >0</span
+          >
           <em class="post-meta-item-text">阅读量</em>
         </span>
-      
-
       
       <ul class="article-tag-list" itemprop="keywords">
   
@@ -591,14 +710,12 @@
     data-aos="fade-up"
   >
     
-
-    
-      <div class="article-nav-link-wrap article-nav-link-right">
+      <div class="article-nav-link-wrap article-nav-link-left">
         
           
           
             <img
-              data-src="http://47.108.59.239:12365/f/VXIp/%E8%89%B2%E5%BD%A9%E8%B0%B7.jpg"
+              data-src="https://github.com/curious-energy/picx-images-hosting/raw/master/wallhaven-qd2jr5.83a67aac69.webp"
               data-sizes="auto"
               alt="Test1"
               class="lazyload"
@@ -606,7 +723,7 @@
           
         
         <a href="http://localhost:1313/post/test1/"></a>
-        <div class="article-nav-caption">后一篇</div>
+        <div class="article-nav-caption">前一篇</div>
         <h3 class="article-nav-title">
           
             Test1
@@ -614,19 +731,21 @@
         </h3>
       </div>
     
+
+    
   </nav>
 
 
   
 </article>
 
-  <section
+
+
+  <div
     id="comments"
-    class="vcomment"
+    class="wcomment"
     data-aos="fade-up"
-  ></section>
-
-
+  ></div>
 
 
 
@@ -680,7 +799,7 @@
       <div>
         <span class="icon-brush"
           >&nbsp;
-            44
+            167
           </span
         >
         &nbsp;|&nbsp;
@@ -1092,9 +1211,9 @@
       <script data-pjax>
         window.REIMU_POST = {
           author: "Curious Enegry",
-          title: "Hello World",
-          url: "http:\/\/localhost:1313\/post\/hello\/",
-          description: "💘 博麗 霊夢 💘\n",
+          title: "无人机协作调研",
+          url: "http:\/\/localhost:1313\/post\/uav_swarm_tech_survey\/",
+          description: " 以下的内容来源于徐浩博士的一个讲座。\nXu Hao(徐浩)\n主要内容：\r从无人机单机智能到无人机集群 用于无人机集群的去中心化视觉一惯性-UWB相对定位 Omni-Swarm:具有全局一致性的去中心化全向视觉-惯性-UWB无人机集群状态估计 分布式协同SLAM(Distributed Collaborative SLAM)基础和BDPGO(平衡分布式位姿图优化) $D^2$SLAM:去中心化和分布式无人机协同定位与建图(CSLAM)系统 总结和未来工作 主要依托的软硬件情况：\r集群通讯（规模大后很复杂）wifi信息广播，mesh网络路由\n中心式，依赖中心 地面站\n区分去中心化，分布式 去中心 …",
           cover: "http:\/\/localhost:1313\/images\/c_g.jpg",
         };
       </script>
@@ -1148,52 +1267,27 @@
 
 
 
-  
-
-  
-  
-  
-  
-  
-  
-  <script
-    src="https://npm.webcache.cn/valine@1.5.1/dist/Valine.min.js"
-    
-    
-    data-pjax
-    
-    integrity="sha384-3ma91AExDeMAZ1rjTjaP8V2A2obQE&#43;s5ltKRwYlwdpArz9xVbp0tF3b0VV2ACNPn" crossorigin="anonymous"
-  ></script>
 
 
-  <script data-pjax>
-    var GUEST_INFO = ['nick', 'mail', 'link'];
-    var guest_info = 'nick,mail,link'.split(',').filter((item) => {
-      return GUEST_INFO.indexOf(item) > -1
+<script data-pjax type="module">
+  const { init } = await safeImport('https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs', 'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5');
+  if(_$('.wcomment')) {
+    window.walineInstance = init({
+      el: '.wcomment',
+      serverURL: 'https:\/\/waline-xi-lilac.vercel.app\/',
+      lang: 'zh-CN',
+      locale: JSON.parse("{}"),
+      emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+      meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+      requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+      wordLimit:  0 ,
+      comment: true,
+      pageSize:  10 ,
+      dark: 'html[data-theme="dark"]',
+      pageview:  true ,
     });
-    var recordIP = JSON.parse('true');
-    var highlight = JSON.parse('true');
-    var visitor = JSON.parse('true');
-
-    if (window.Valine) {
-      new Valine({
-        el: '.vcomment',
-        appId: "s6RSgxTFY9dorFo2atdbI74K-MdYXbMMI",
-        appKey: "YI6fhKQyuT7yKG4KVLN1ibJe",
-        placeholder: "Write something~",
-        pageSize: '10',
-        avatar: 'mp',
-        lang: 'zh-cn',
-        recordIP: recordIP,
-        highlight: highlight,
-        visitor: visitor,
-        requiredFields: guest_info,
-        path: window.location.pathname
-      });
-    }
-  </script>
-
-
+  }
+</script>
 
 
 
@@ -1203,6 +1297,64 @@
 
       
     
+    
+      
+        
+
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/katex@0.16.9/dist/katex.min.js"
+    
+    
+    data-pjax
+    
+    integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8" crossorigin="anonymous"
+  ></script>
+
+
+        
+
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/katex@0.16.9/dist/contrib/auto-render.min.js"
+    
+    
+    data-pjax
+    
+    integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05" crossorigin="anonymous"
+  ></script>
+
+
+        <script data-pjax>
+          var renderMath = () => {
+            if (!window.renderMathInElement) return;
+            window.renderMathInElement(_$("article"), {
+              delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "\\[", right: "\\]", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+              ],
+            });
+          };
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", renderMath, { once: true });
+          } else {
+            renderMath();
+          }
+        </script>
+      
+      
     
   </div>
 </div>
