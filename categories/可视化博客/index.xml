@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>可视化博客 on Machine Space</title><link>https://curious-energy.github.io/categories/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8D%9A%E5%AE%A2/</link><description>Recent content in 可视化博客 on Machine Space</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 17 Dec 2025 20:03:54 +0000</lastBuildDate><atom:link href="https://curious-energy.github.io/categories/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml"/><item><title>博客可视化操作界面</title><link>https://curious-energy.github.io/post/blog_system_for_user_experience/</link><pubDate>Wed, 17 Dec 2025 20:03:54 +0000</pubDate><guid>https://curious-energy.github.io/post/blog_system_for_user_experience/</guid><description>目标 每次博客的启动和运行逻辑不想记那么清楚，因为产出内容，而不是受限于各种因素而导致产出内容的愿望转移。
+手段 采用cursor帮助我实现一个最简单的离线操作界面，然后可以可视化操作需要的操作，这样每次的体验就是只关注内容，而不是想发布的命令和环境配置的问题。（实际折腾了好久，每次快放弃的时候突然又行了，擦汗表情）
+实现的样子 简单介绍 功能很简单，点击一个bat文件，启动这个本地博客管理系统，然后就看到了这个界面。
+最左边可以看到所有的博客，便于选择编辑，新建博客直接点击右上角新建文章。 分类，标签按照喜好填写。这些直接对应原md+++里的内容，日期暂时是自动按照当前时间自动设置。当然也可以自己写一个+++来直接顶掉，其他功能也是一样。
+多了加密功能，我只是感觉我有需求，但是这个加密强度一般，可能稍微懂一些的人就能破解。点击加密文章，然后输入密码。
+剩下就是自动保存功能和手动保存，删除功能了。当然我不依赖自动保存功能，但至少电脑只要不意外断电都有救，算是个保险。
+右上角还有预览，上线前确定一下效果，基本和网页一样，也是直接继承的hugo原本的功能，这就是一个壳子。 最后呢，点击发布博客，直接上线，结合hugo自带的Git Action，完成内容上线。基本满足我日常使用。</description></item></channel></rss>
