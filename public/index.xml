@@ -1,4 +1,59 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Machine Space</title><link>https://curious-energy.github.io/algolia.json</link><description>Recent content on Machine Space</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 17 Dec 2025 12:29:50 +0000</lastBuildDate><atom:link href="https://curious-energy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>加密文章测试</title><link>https://curious-energy.github.io/post/test-for-passwd/</link><pubDate>Wed, 17 Dec 2025 12:29:50 +0000</pubDate><guid>https://curious-energy.github.io/post/test-for-passwd/</guid><description>&lt;p>&lt;em>此文章已加密，请输入密码查看。&lt;/em>&lt;/p></description></item><item><title>博客可视化操作界面</title><link>https://curious-energy.github.io/post/blog_system_for_user_experience/</link><pubDate>Tue, 16 Dec 2025 19:08:30 +0000</pubDate><guid>https://curious-energy.github.io/post/blog_system_for_user_experience/</guid><description>&lt;h2 id="缘起">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Machine Space</title><link>https://curious-energy.github.io/algolia.json</link><description>Recent content on Machine Space</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 17 Dec 2025 19:57:33 +0000</lastBuildDate><atom:link href="https://curious-energy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>一些网站使用上的备忘录</title><link>https://curious-energy.github.io/post/test1/</link><pubDate>Wed, 17 Dec 2025 19:57:33 +0000</pubDate><guid>https://curious-energy.github.io/post/test1/</guid><description>&lt;p>+++
+date = &amp;lsquo;2025-02-20T17:55:43+08:00&amp;rsquo;
+draft = false
+title = &amp;lsquo;一些网站使用上的备忘录&amp;rsquo;
+math = true
++++&lt;/p>
+&lt;p>奇怪的一点，目录的显示必须是##开始，#是无效果的。&lt;/p>
+&lt;p>创建一个新的博客文章, x为新文章名字，最好和内容有一点关联性，我怕找不到了。
+&lt;code>hugo new content post/x.md&lt;/code>&lt;/p>
+&lt;p>写完后保存就行，一般情况下我是在其他markdown软件下写好才会往这边复制，所以问题不大，注意一下兼容性就行。&lt;/p>
+&lt;p>图床目前使用这个&lt;a href="https://picx.xpoet.cn/">网站&lt;/a>,测试了一下还是很好用的，至少不怕跑路而且免费。&lt;/p>
+&lt;p>&lt;code>hugo server&lt;/code>可以用来预览页面，正式发布前使用&lt;code>hugo&lt;/code>生成发布内容public下。&lt;/p>
+&lt;p>接着使用&lt;code>npm run algolia&lt;/code>来更新一下站内搜索的索引。&lt;/p>
+&lt;p>本地的所有事项完成后，开始上传内容到github.&lt;/p>
+&lt;p>正常情况下，&lt;code>git add .&lt;/code>, &lt;code>git commit -m &amp;quot;some logs...&amp;quot;&lt;/code>, &lt;code>git push&lt;/code>就可以了。&lt;/p>
+&lt;p>PS：新的地方可以使用git clone这些来拉取网站原内容。&lt;/p>
+&lt;h2 id="子命令">
+&lt;a class="header-anchor" href="#%e5%ad%90%e5%91%bd%e4%bb%a4">&lt;/a>
+子命令
+&lt;/h2>&lt;p>重置用户登陆失败状态：&lt;/p>
+&lt;p>&lt;code>sudo pam_tally2 --user testuser --reset&lt;/code>&lt;/p>
+&lt;p>查看秘密过期状态：&lt;/p>
+&lt;p>&lt;code>sudo chage -l testuser&lt;/code>&lt;/p>
+&lt;p>改变密码使用时间和提示修改：&lt;/p>
+&lt;p>&lt;code>sudo chage -M 150 -W 30 testuser&lt;/code>&lt;/p>
+&lt;p>督促修改秘密&lt;/p>
+&lt;p>&lt;code>chage -d '2023-10-01' testuser&lt;/code>&lt;/p>
+&lt;h2 id="代码测试">
+&lt;a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e6%b5%8b%e8%af%95">&lt;/a>
+代码测试
+&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">os&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">listdir&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;this is test&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="公式测试">
+&lt;a class="header-anchor" href="#%e5%85%ac%e5%bc%8f%e6%b5%8b%e8%af%95">&lt;/a>
+公式测试
+&lt;/h2>$$
+\int_0^\infty e^x dx
+$$&lt;h2 id="其他">
+&lt;a class="header-anchor" href="#%e5%85%b6%e4%bb%96">&lt;/a>
+其他
+&lt;/h2>&lt;blockquote>
+&lt;p>不知道这个可以不可以正常使用&lt;/p></description></item><item><title>博客系统上线测试</title><link>https://curious-energy.github.io/post/system-test-for-online/</link><pubDate>Wed, 17 Dec 2025 19:53:58 +0000</pubDate><guid>https://curious-energy.github.io/post/system-test-for-online/</guid><description>&lt;h2 id="测试内容">
+&lt;a class="header-anchor" href="#%e6%b5%8b%e8%af%95%e5%86%85%e5%ae%b9">&lt;/a>
+测试内容
+&lt;/h2>&lt;p>将博客同步到远程，也就是网络空间。&lt;/p>
+&lt;h2 id="主要目的">
+&lt;a class="header-anchor" href="#%e4%b8%bb%e8%a6%81%e7%9b%ae%e7%9a%84">&lt;/a>
+主要目的
+&lt;/h2>&lt;p>网络空间内容分享。&lt;/p>
+&lt;h2 id="优势">
+&lt;a class="header-anchor" href="#%e4%bc%98%e5%8a%bf">&lt;/a>
+优势
+&lt;/h2>&lt;p>完全控制，没有广告，纯净。&lt;/p></description></item><item><title>加密文章测试</title><link>https://curious-energy.github.io/post/test-for-passwd/</link><pubDate>Wed, 17 Dec 2025 12:29:50 +0000</pubDate><guid>https://curious-energy.github.io/post/test-for-passwd/</guid><description>&lt;p>&lt;em>此文章已加密，请输入密码查看。&lt;/em>&lt;/p></description></item><item><title>博客可视化操作界面</title><link>https://curious-energy.github.io/post/blog_system_for_user_experience/</link><pubDate>Tue, 16 Dec 2025 19:08:30 +0000</pubDate><guid>https://curious-energy.github.io/post/blog_system_for_user_experience/</guid><description>&lt;h2 id="缘起">
 &lt;a class="header-anchor" href="#%e7%bc%98%e8%b5%b7">&lt;/a>
 缘起
 &lt;/h2>&lt;p>每次博客的启动和运行逻辑不想记那么清楚，因为产出内容，而不是受限于各种因素而导致产出内容的愿望转移。&lt;/p>
@@ -110,45 +165,7 @@ realscene双目版本
 全局一致性（地图上使用），对于远距离的无人机间，具体是多远并不重要。&lt;/p>
 &lt;p>Distributed mapping with privacy and communication constraints.&lt;/p>
 &lt;p>BDPGO: balanced distributed pose graph optimization framework for swarm robotics
-分布式优化，平衡计算量，计算时间优化&lt;/p></description></item><item><title>一些网站使用上的备忘录</title><link>https://curious-energy.github.io/post/test1/</link><pubDate>Thu, 20 Feb 2025 17:55:43 +0800</pubDate><guid>https://curious-energy.github.io/post/test1/</guid><description>&lt;p>奇怪的一点，目录的显示必须是##开始，#是无效果的。&lt;/p>
-&lt;p>创建一个新的博客文章, x为新文章名字，最好和内容有一点关联性，我怕找不到了。
-&lt;code>hugo new content post/x.md&lt;/code>&lt;/p>
-&lt;p>写完后保存就行，一般情况下我是在其他markdown软件下写好才会往这边复制，所以问题不大，注意一下兼容性就行。&lt;/p>
-&lt;p>图床目前使用这个&lt;a href="https://picx.xpoet.cn/">网站&lt;/a>,测试了一下还是很好用的，至少不怕跑路而且免费。&lt;/p>
-&lt;p>&lt;code>hugo server&lt;/code>可以用来预览页面，正式发布前使用&lt;code>hugo&lt;/code>生成发布内容public下。&lt;/p>
-&lt;p>接着使用&lt;code>npm run algolia&lt;/code>来更新一下站内搜索的索引。&lt;/p>
-&lt;p>本地的所有事项完成后，开始上传内容到github.&lt;/p>
-&lt;p>正常情况下，&lt;code>git add .&lt;/code>, &lt;code>git commit -m &amp;quot;some logs...&amp;quot;&lt;/code>, &lt;code>git push&lt;/code>就可以了。&lt;/p>
-&lt;p>PS：新的地方可以使用git clone这些来拉取网站原内容。&lt;/p>
-&lt;h2 id="子命令">
-&lt;a class="header-anchor" href="#%e5%ad%90%e5%91%bd%e4%bb%a4">&lt;/a>
-子命令
-&lt;/h2>&lt;p>重置用户登陆失败状态：&lt;/p>
-&lt;p>&lt;code>sudo pam_tally2 --user testuser --reset&lt;/code>&lt;/p>
-&lt;p>查看秘密过期状态：&lt;/p>
-&lt;p>&lt;code>sudo chage -l testuser&lt;/code>&lt;/p>
-&lt;p>改变密码使用时间和提示修改：&lt;/p>
-&lt;p>&lt;code>sudo chage -M 150 -W 30 testuser&lt;/code>&lt;/p>
-&lt;p>督促修改秘密&lt;/p>
-&lt;p>&lt;code>chage -d '2023-10-01' testuser&lt;/code>&lt;/p>
-&lt;h2 id="代码测试">
-&lt;a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e6%b5%8b%e8%af%95">&lt;/a>
-代码测试
-&lt;/h2>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">os&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">listdir&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;this is test&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="公式测试">
-&lt;a class="header-anchor" href="#%e5%85%ac%e5%bc%8f%e6%b5%8b%e8%af%95">&lt;/a>
-公式测试
-&lt;/h2>$$
-\int_0^\infty e^x dx
-$$&lt;h2 id="其他">
-&lt;a class="header-anchor" href="#%e5%85%b6%e4%bb%96">&lt;/a>
-其他
-&lt;/h2>&lt;blockquote>
-&lt;p>不知道这个可以不可以正常使用&lt;/p></description></item><item><title>关于</title><link>https://curious-energy.github.io/about/</link><pubDate>Thu, 09 Jun 2022 20:12:52 +0800</pubDate><guid>https://curious-energy.github.io/about/</guid><description>&lt;h1 id="建立目的">
+分布式优化，平衡计算量，计算时间优化&lt;/p></description></item><item><title>关于</title><link>https://curious-energy.github.io/about/</link><pubDate>Thu, 09 Jun 2022 20:12:52 +0800</pubDate><guid>https://curious-energy.github.io/about/</guid><description>&lt;h1 id="建立目的">
 &lt;a class="header-anchor" href="#%e5%bb%ba%e7%ab%8b%e7%9b%ae%e7%9a%84">&lt;/a>
 建立目的
 &lt;/h1>&lt;p>还是自己的地盘自己做主，一切比较方便。&lt;/p>

@@ -6,18 +6,18 @@
 }
 
 :root {
-  --red-0: #4ab291;
-  --red-1: #0d0d0d;
-  --red-2: #0b5015;
-  --red-3: #afffcc;
-  --red-4: #d0ffd2;
-  --red-5: #e4ffe6;
-  --red-5-5: #ecfff0;
-  --red-6: #f3fff5;
+  --red-0: #ff0000;
+  --red-1: #ff5252;
+  --red-2: #ff7c7c;
+  --red-3: #ffafaf;
+  --red-4: #ffd0d0;
+  --red-5: #ffe4e4;
+  --red-5-5: #ffecec;
+  --red-6: #fff3f3;
   --grey-9: #999;
   --grey-7: #777;
   --color-archive-year: black;
-  --color-default: #6c6060;
+  --color-default: #555;
   --color-border: var(--red-3);
   --color-link: var(--red-1);
   --color-background: #eee;
@@ -31,8 +31,8 @@
   --color-meta-shadow: var(--red-6);
   --color-hover-shadow: rgba(150, 150, 150, 0.1);
   --color-h2-after: var(--red-1);
-  --color-red-6-shadow: rgba(151, 194, 172, 0.724);
-  --color-red-3-shadow: rgba(78, 220, 255, 0.3);
+  --color-red-6-shadow: rgba(255, 78, 78, 0.6);
+  --color-red-3-shadow: rgba(255, 78, 78, 0.3);
   --highlight-nav: #e6e6e6;
   --highlight-scrollbar: #d6d6d6;
   --highlight-background: #f7f7f7;
@@ -55,7 +55,7 @@
 [data-theme="dark"]:root {
   --red-0: var(--red-1);
   --red-4: rgba(255, 208, 208, 0.5);
-  --red-5: rgba(255, 228, 228, 0.547);
+  --red-5: rgba(255, 228, 228, 0.2);
   --red-5-5: rgba(255, 236, 236, 0.1);
   --red-6: rgba(255, 243, 243, 0.2);
   --color-archive-year: #999;
