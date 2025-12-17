@@ -1,4 +1,14 @@
 +++
+date = '2025-12-17T20:03:47.062Z'
+draft = false
+title = '远程同步的一些事项'
+categories = []
+tags = []
+
++++
+
+
++++
 date = '2025-02-21T18:53:45+08:00'
 draft = false
 title = '远程同步的一些事项'

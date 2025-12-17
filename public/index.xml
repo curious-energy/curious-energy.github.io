@@ -1,4 +1,145 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Machine Space</title><link>https://curious-energy.github.io/algolia.json</link><description>Recent content on Machine Space</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 17 Dec 2025 19:57:33 +0000</lastBuildDate><atom:link href="https://curious-energy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>一些网站使用上的备忘录</title><link>https://curious-energy.github.io/post/test1/</link><pubDate>Wed, 17 Dec 2025 19:57:33 +0000</pubDate><guid>https://curious-energy.github.io/post/test1/</guid><description>&lt;p>+++
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Machine Space</title><link>https://curious-energy.github.io/algolia.json</link><description>Recent content on Machine Space</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 17 Dec 2025 20:03:54 +0000</lastBuildDate><atom:link href="https://curious-energy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>博客可视化操作界面</title><link>https://curious-energy.github.io/post/blog_system_for_user_experience/</link><pubDate>Wed, 17 Dec 2025 20:03:54 +0000</pubDate><guid>https://curious-energy.github.io/post/blog_system_for_user_experience/</guid><description>&lt;p>+++
+date = &amp;lsquo;2025-12-16T19:08:30.650Z&amp;rsquo;
+draft = false
+title = &amp;lsquo;博客可视化操作界面&amp;rsquo;
+categories = []
+tags = []&lt;/p>
+&lt;p>+++&lt;/p>
+&lt;h2 id="缘起">
+&lt;a class="header-anchor" href="#%e7%bc%98%e8%b5%b7">&lt;/a>
+缘起
+&lt;/h2>&lt;p>每次博客的启动和运行逻辑不想记那么清楚，因为产出内容，而不是受限于各种因素而导致产出内容的愿望转移。&lt;/p>
+&lt;h2 id="手段">
+&lt;a class="header-anchor" href="#%e6%89%8b%e6%ae%b5">&lt;/a>
+手段
+&lt;/h2>&lt;p>采用cursor帮助我实现一个最简单的离线操作界面，然后可以可视化操作需要的操作，这样每次的体验就是只关注内容，而不是想发布的命令和环境配置的问题。&lt;/p>
+&lt;h2 id="实现的样子">
+&lt;a class="header-anchor" href="#%e5%ae%9e%e7%8e%b0%e7%9a%84%e6%a0%b7%e5%ad%90">&lt;/a>
+实现的样子
+&lt;/h2>&lt;p>&lt;img src="https://github.com/curious-energy/picx-images-hosting/raw/master/image.6m4czzusr9.webp" alt="样例">&lt;/p></description></item><item><title>远程同步的一些事项</title><link>https://curious-energy.github.io/post/remote_server/</link><pubDate>Wed, 17 Dec 2025 20:03:47 +0000</pubDate><guid>https://curious-energy.github.io/post/remote_server/</guid><description>&lt;p>+++
+date = &amp;lsquo;2025-02-21T18:53:45+08:00&amp;rsquo;
+draft = false
+title = &amp;lsquo;远程同步的一些事项&amp;rsquo;
+math = true
+cover = false
+categories = [&amp;ldquo;远程同步&amp;rdquo;, &amp;ldquo;like&amp;rdquo;]
+tags = [&amp;ldquo;云服务器&amp;rdquo;]
++++&lt;/p>
+&lt;h2 id="同步的作用">
+&lt;a class="header-anchor" href="#%e5%90%8c%e6%ad%a5%e7%9a%84%e4%bd%9c%e7%94%a8">&lt;/a>
+同步的作用
+&lt;/h2>&lt;p>使用同步主要是在多个设备间进行内容同步，类似博客这种作用，但更为私人。
+我的主要应用场景是同步我Obsidian的文档，如果没有同步，这个文档的限制是很大的。
+电脑不在身边，如果想记录一些东西，只能放在手机上或者云笔记。&lt;/p>
+&lt;p>这时候问题就来了：&lt;/p>
+&lt;ul>
+&lt;li>在其他设备记录的内容同步必须是靠复制粘贴，费时费力，而且无法快速整合内容。&lt;/li>
+&lt;li>一些在电脑上记录的文件需要查阅，手机上是没有对应内容的。&lt;/li>
+&lt;li>云笔记便可以解决上述两个问题，甚至可以分享给第三方，但云笔记上随着内容的增加，做备份就很困难了。&lt;/li>
+&lt;li>云上的内容本应该是我们自己生产的，但用户很难本地拥有了。&lt;/li>
+&lt;li>所以目前使用语雀作为第三方分享共同编辑的一个平台，以及少量的重要内容备份。&lt;/li>
+&lt;li>但本地是内容生产的主要阵地，Obsidian+插件Remotely Save可以做到这个。&lt;/li>
+&lt;/ul>
+&lt;p>这时候，你会发现，问题又出在自己解决问题的复杂度上，虽然可以我认为做这些事情还是比较简单的，但需要花费的维护搭建成本对于大部分人来说还是代价比较高的。
+（嗯，这时候需要认真分析一下自己的需求，选择适合自己的方案。）&lt;/p>
+&lt;h2 id="实现方式">
+&lt;a class="header-anchor" href="#%e5%ae%9e%e7%8e%b0%e6%96%b9%e5%bc%8f">&lt;/a>
+实现方式
+&lt;/h2>&lt;p>看到这里，可能是要看我如何实现的笔记同步。&lt;/p>
+&lt;p>原理本质上就是，Obsidian的本地存储库，这个安装后就有了，没有压力。
+重点在WebDav上面，通过WebDav来进行文件的同步。&lt;/p>
+&lt;p>实现的方式有以下两个：（我都有使用）&lt;/p>
+&lt;ol>
+&lt;li>申请一些云盘厂商提供的WebDav服务，这个比自己实现的要稳定。我使用的是https://infini-cloud.net/新人可以想办法得到20G的免费空间。然后申请需要使用的api就行。&lt;/li>
+&lt;li>本地搭建一个云盘服务，同时就兼容WebDav，熟悉NAS的人特别适合这个方法。我的实现方式有一些不同。&lt;/li>
+&lt;/ol>
+&lt;h2 id="原生的实现方法">
+&lt;a class="header-anchor" href="#%e5%8e%9f%e7%94%9f%e7%9a%84%e5%ae%9e%e7%8e%b0%e6%96%b9%e6%b3%95">&lt;/a>
+原生的实现方法
+&lt;/h2>&lt;p>我比较喜欢linux系统上搞事情，一是很熟悉，二是扩展性很高，不受限制。
+操作系统直接使用Ubuntu，工具包很全。安装zfs文件系统，通过文件系统将本地的硬盘整合为一个大盘进行管理，甚至盘够多的话可以做raid系统容灾备份。将系统里划分一块空间来做云盘服务，这里我对一些关键的文件进行了rsync命令的定时备份操作，这些重要文件是不能丢失的（注意，硬件上最好可以分开）。&lt;/p>
+&lt;p>云盘服务使用了Cloudreve来实现，跟着官方配置参数就好。创建好的云盘就本身支持WebDav.&lt;/p>
+&lt;p>最后需要有一个公网ip，这个每年阿里云或者其他服务商都有价格比较便宜的云服务器（70到90元一年）就有了一个公网ip，如果可以从自家宽带申请下公网ip更好，甚至可以找一些免费的反代服务（例如natfrp）&lt;/p>
+&lt;p>在本地和服务器端使用原生的frp搭建就可以拥有全网同步功能了。&lt;/p>
+&lt;h2 id="其他">
+&lt;a class="header-anchor" href="#%e5%85%b6%e4%bb%96">&lt;/a>
+其他
+&lt;/h2>&lt;p>因为组件除了依赖公网ip，一般大厂的服务很稳，所以大部分都是本地出问题，而本地的部署一般在手边，很容易就解决了，所以整套方案对个人来说很稳定，我这边经历过断网，本地电脑断电这些问题，文件也没有丢失。&lt;/p>
+&lt;p>同时，本地的这个Ubuntu电脑是一个笔记本，还挂着pt共享等服务。云端的服务器如果有其他需求也可以互不干扰。&lt;/p>
+&lt;p>要注意实现的时候，zfs文件系统应该要覆盖盘上的内容的，所以相关命令小心，做好文件备份。&lt;/p>
+&lt;h2 id="重新开始的难度">
+&lt;a class="header-anchor" href="#%e9%87%8d%e6%96%b0%e5%bc%80%e5%a7%8b%e7%9a%84%e9%9a%be%e5%ba%a6">&lt;/a>
+重新开始的难度
+&lt;/h2>&lt;p>如上面所述，云服务器上需要一个frp服务，这个有很多一键安装的脚本，然后开启systemd服务就可以。
+本地硬盘，但一般不移动，风险较低。这里最薄弱的可能是本地网络，需要查看网络连接情况。云盘和linux本身长期运行很稳定。&lt;/p></description></item><item><title>无人机协作调研</title><link>https://curious-energy.github.io/post/uav_swarm_tech_survey/</link><pubDate>Wed, 17 Dec 2025 20:03:40 +0000</pubDate><guid>https://curious-energy.github.io/post/uav_swarm_tech_survey/</guid><description>&lt;p>+++
+date = &amp;lsquo;2025-02-21T17:23:49+08:00&amp;rsquo;
+draft = false
+title = &amp;lsquo;无人机协作调研&amp;rsquo;
+math = true
++++&lt;/p>
+&lt;blockquote>
+&lt;p>以下的内容来源于徐浩博士的一个讲座。&lt;/p>
+&lt;/blockquote>
+&lt;p>Xu Hao(徐浩)&lt;/p>
+&lt;h1 id="主要内容">
+&lt;a class="header-anchor" href="#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9">&lt;/a>
+主要内容：
+&lt;/h1>&lt;ol>
+&lt;li>从无人机单机智能到无人机集群&lt;/li>
+&lt;li>用于无人机集群的去中心化视觉一惯性-UWB相对定位&lt;/li>
+&lt;li>Omni-Swarm:具有全局一致性的去中心化全向视觉-惯性-UWB无人机集群状态估计&lt;/li>
+&lt;li>分布式协同SLAM(Distributed Collaborative SLAM)基础和BDPGO(平衡分布式位姿图优化)&lt;/li>
+&lt;li>$D^2$SLAM:去中心化和分布式无人机协同定位与建图(CSLAM)系统&lt;/li>
+&lt;li>总结和未来工作&lt;/li>
+&lt;/ol>
+&lt;h1 id="主要依托的软硬件情况">
+&lt;a class="header-anchor" href="#%e4%b8%bb%e8%a6%81%e4%be%9d%e6%89%98%e7%9a%84%e8%bd%af%e7%a1%ac%e4%bb%b6%e6%83%85%e5%86%b5">&lt;/a>
+主要依托的软硬件情况：
+&lt;/h1>&lt;p>集群通讯（规模大后很复杂）wifi信息广播，mesh网络路由&lt;/p>
+&lt;p>中心式，依赖中心 地面站&lt;/p>
+&lt;p>区分去中心化，分布式
+去中心化，没有中心节点但需要
+分布式，可以有中心节点，分担计算和探索&lt;/p>
+&lt;p>联合定位，相对定位（避障）
+（互相看到，可以实现相对定位精度提升）
+全局一致性（地图）&lt;/p>
+&lt;p>单目初始化 刚开始需要合适运动&lt;/p>
+&lt;p>uwb超宽带通讯，脉冲
+测距，无定向信息，精度10厘米左右内
+容易被遮挡和电子干扰
+粗略定位&lt;/p>
+&lt;p>wifi, ns级别
+无线随意网络 (Wireless ad hoc network)&lt;/p>
+&lt;p>vins-fusion实时VIO作为基础&lt;/p>
+&lt;p>无人机集群，无人机间很相似&lt;/p>
+&lt;p>（uwb测量需要相对运动）在uwb的粗略定位上，使用yolov3来对无人机进行区分（识别，跟踪），结合视觉信息来使得定位达到几厘米定位误差。&lt;/p>
+&lt;p>VIO长时间会飘，导致无法全局一致性&lt;/p>
+&lt;h1 id="omni-swarm-鱼眼相机上下两个每个fov大约235扩大观察范围地面特征点来快速初始化和全局定位">
+&lt;a class="header-anchor" href="#omni-swarm-%e9%b1%bc%e7%9c%bc%e7%9b%b8%e6%9c%ba%e4%b8%8a%e4%b8%8b%e4%b8%a4%e4%b8%aa%e6%af%8f%e4%b8%aafov%e5%a4%a7%e7%ba%a6235%e6%89%a9%e5%a4%a7%e8%a7%82%e5%af%9f%e8%8c%83%e5%9b%b4%e5%9c%b0%e9%9d%a2%e7%89%b9%e5%be%81%e7%82%b9%e6%9d%a5%e5%bf%ab%e9%80%9f%e5%88%9d%e5%a7%8b%e5%8c%96%e5%92%8c%e5%85%a8%e5%b1%80%e5%ae%9a%e4%bd%8d">&lt;/a>
+Omni-Swarm, 鱼眼相机（上下两个，每个FOV大约235°）扩大观察范围，地面特征点来快速初始化和全局定位。
+&lt;/h1>&lt;p>VIO: vins-fisheye
+mobileNetVLAD全局描述子(关键帧)
+Superpoint特征描述子
+Faiss建立全局描述子数据库
+视觉前端适合使用神经网络，后端进行图优化&lt;/p>
+&lt;h1 id="racer去中心化多无人机系统的快速协作探索">
+&lt;a class="header-anchor" href="#racer%e5%8e%bb%e4%b8%ad%e5%bf%83%e5%8c%96%e5%a4%9a%e6%97%a0%e4%ba%ba%e6%9c%ba%e7%b3%bb%e7%bb%9f%e7%9a%84%e5%bf%ab%e9%80%9f%e5%8d%8f%e4%bd%9c%e6%8e%a2%e7%b4%a2">&lt;/a>
+RACER:去中心化多无人机系统的快速协作探索
+&lt;/h1>&lt;p>Zhou Boyu（）
+realscene双目版本
+优势：达到了精准的状态估计和全局一致性保障，基于地图的快速初始化
+劣势：计算冗余，重复计算，对于大规模100架计算不过来
+全局一致性（地图上使用），对于远距离的无人机间，具体是多远并不重要。&lt;/p></description></item><item><title>加密文章测试</title><link>https://curious-energy.github.io/post/test-for-passwd/</link><pubDate>Wed, 17 Dec 2025 20:03:28 +0000</pubDate><guid>https://curious-energy.github.io/post/test-for-passwd/</guid><description>&lt;p>+++
+date = &amp;lsquo;2025-12-17T12:29:50.229Z&amp;rsquo;
+draft = false
+title = &amp;lsquo;加密文章测试&amp;rsquo;
+categories = [&amp;lsquo;博客&amp;rsquo;]
+tags = [&amp;lsquo;搭建&amp;rsquo;, &amp;lsquo;博客&amp;rsquo;]
+encrypted = true
+password = &amp;lsquo;1qaz&amp;rsquo;
+encrypted_content = &amp;lsquo;&amp;lsquo;&amp;lsquo;U2FsdGVkX18e0XjaMSJLFrrv+80FwGNe6HQFVWkRpKe1cNSBkncsDZKdrwHUI1v2hSq2mrtvG/H6yYfPYiQUiTWazVwUIre9JafAXGzsu1H4T073Fkn2Fzs3gXQXfqxjx79CdgvK/KXdZPrMabXG+Q==&amp;rsquo;&amp;rsquo;&amp;rsquo;
++++&lt;/p>
+&lt;p>&lt;em>此文章已加密，请输入密码查看。&lt;/em>&lt;/p></description></item><item><title>一些网站使用上的备忘录</title><link>https://curious-energy.github.io/post/test1/</link><pubDate>Wed, 17 Dec 2025 19:57:33 +0000</pubDate><guid>https://curious-energy.github.io/post/test1/</guid><description>&lt;p>+++
 date = &amp;lsquo;2025-02-20T17:55:43+08:00&amp;rsquo;
 draft = false
 title = &amp;lsquo;一些网站使用上的备忘录&amp;rsquo;
@@ -53,119 +194,7 @@ $$&lt;h2 id="其他">
 &lt;h2 id="优势">
 &lt;a class="header-anchor" href="#%e4%bc%98%e5%8a%bf">&lt;/a>
 优势
-&lt;/h2>&lt;p>完全控制，没有广告，纯净。&lt;/p></description></item><item><title>加密文章测试</title><link>https://curious-energy.github.io/post/test-for-passwd/</link><pubDate>Wed, 17 Dec 2025 12:29:50 +0000</pubDate><guid>https://curious-energy.github.io/post/test-for-passwd/</guid><description>&lt;p>&lt;em>此文章已加密，请输入密码查看。&lt;/em>&lt;/p></description></item><item><title>博客可视化操作界面</title><link>https://curious-energy.github.io/post/blog_system_for_user_experience/</link><pubDate>Tue, 16 Dec 2025 19:08:30 +0000</pubDate><guid>https://curious-energy.github.io/post/blog_system_for_user_experience/</guid><description>&lt;h2 id="缘起">
-&lt;a class="header-anchor" href="#%e7%bc%98%e8%b5%b7">&lt;/a>
-缘起
-&lt;/h2>&lt;p>每次博客的启动和运行逻辑不想记那么清楚，因为产出内容，而不是受限于各种因素而导致产出内容的愿望转移。&lt;/p>
-&lt;h2 id="手段">
-&lt;a class="header-anchor" href="#%e6%89%8b%e6%ae%b5">&lt;/a>
-手段
-&lt;/h2>&lt;p>采用cursor帮助我实现一个最简单的离线操作界面，然后可以可视化操作需要的操作，这样每次的体验就是只关注内容，而不是想发布的命令和环境配置的问题。&lt;/p>
-&lt;h2 id="实现的样子">
-&lt;a class="header-anchor" href="#%e5%ae%9e%e7%8e%b0%e7%9a%84%e6%a0%b7%e5%ad%90">&lt;/a>
-实现的样子
-&lt;/h2>&lt;p>&lt;img src="https://github.com/curious-energy/picx-images-hosting/raw/master/image.6m4czzusr9.webp" alt="样例">&lt;/p></description></item><item><title>远程同步的一些事项</title><link>https://curious-energy.github.io/post/remote_server/</link><pubDate>Fri, 21 Feb 2025 18:53:45 +0800</pubDate><guid>https://curious-energy.github.io/post/remote_server/</guid><description>&lt;h2 id="同步的作用">
-&lt;a class="header-anchor" href="#%e5%90%8c%e6%ad%a5%e7%9a%84%e4%bd%9c%e7%94%a8">&lt;/a>
-同步的作用
-&lt;/h2>&lt;p>使用同步主要是在多个设备间进行内容同步，类似博客这种作用，但更为私人。
-我的主要应用场景是同步我Obsidian的文档，如果没有同步，这个文档的限制是很大的。
-电脑不在身边，如果想记录一些东西，只能放在手机上或者云笔记。&lt;/p>
-&lt;p>这时候问题就来了：&lt;/p>
-&lt;ul>
-&lt;li>在其他设备记录的内容同步必须是靠复制粘贴，费时费力，而且无法快速整合内容。&lt;/li>
-&lt;li>一些在电脑上记录的文件需要查阅，手机上是没有对应内容的。&lt;/li>
-&lt;li>云笔记便可以解决上述两个问题，甚至可以分享给第三方，但云笔记上随着内容的增加，做备份就很困难了。&lt;/li>
-&lt;li>云上的内容本应该是我们自己生产的，但用户很难本地拥有了。&lt;/li>
-&lt;li>所以目前使用语雀作为第三方分享共同编辑的一个平台，以及少量的重要内容备份。&lt;/li>
-&lt;li>但本地是内容生产的主要阵地，Obsidian+插件Remotely Save可以做到这个。&lt;/li>
-&lt;/ul>
-&lt;p>这时候，你会发现，问题又出在自己解决问题的复杂度上，虽然可以我认为做这些事情还是比较简单的，但需要花费的维护搭建成本对于大部分人来说还是代价比较高的。
-（嗯，这时候需要认真分析一下自己的需求，选择适合自己的方案。）&lt;/p>
-&lt;h2 id="实现方式">
-&lt;a class="header-anchor" href="#%e5%ae%9e%e7%8e%b0%e6%96%b9%e5%bc%8f">&lt;/a>
-实现方式
-&lt;/h2>&lt;p>看到这里，可能是要看我如何实现的笔记同步。&lt;/p>
-&lt;p>原理本质上就是，Obsidian的本地存储库，这个安装后就有了，没有压力。
-重点在WebDav上面，通过WebDav来进行文件的同步。&lt;/p>
-&lt;p>实现的方式有以下两个：（我都有使用）&lt;/p>
-&lt;ol>
-&lt;li>申请一些云盘厂商提供的WebDav服务，这个比自己实现的要稳定。我使用的是https://infini-cloud.net/新人可以想办法得到20G的免费空间。然后申请需要使用的api就行。&lt;/li>
-&lt;li>本地搭建一个云盘服务，同时就兼容WebDav，熟悉NAS的人特别适合这个方法。我的实现方式有一些不同。&lt;/li>
-&lt;/ol>
-&lt;h2 id="原生的实现方法">
-&lt;a class="header-anchor" href="#%e5%8e%9f%e7%94%9f%e7%9a%84%e5%ae%9e%e7%8e%b0%e6%96%b9%e6%b3%95">&lt;/a>
-原生的实现方法
-&lt;/h2>&lt;p>我比较喜欢linux系统上搞事情，一是很熟悉，二是扩展性很高，不受限制。
-操作系统直接使用Ubuntu，工具包很全。安装zfs文件系统，通过文件系统将本地的硬盘整合为一个大盘进行管理，甚至盘够多的话可以做raid系统容灾备份。将系统里划分一块空间来做云盘服务，这里我对一些关键的文件进行了rsync命令的定时备份操作，这些重要文件是不能丢失的（注意，硬件上最好可以分开）。&lt;/p>
-&lt;p>云盘服务使用了Cloudreve来实现，跟着官方配置参数就好。创建好的云盘就本身支持WebDav.&lt;/p>
-&lt;p>最后需要有一个公网ip，这个每年阿里云或者其他服务商都有价格比较便宜的云服务器（70到90元一年）就有了一个公网ip，如果可以从自家宽带申请下公网ip更好，甚至可以找一些免费的反代服务（例如natfrp）&lt;/p>
-&lt;p>在本地和服务器端使用原生的frp搭建就可以拥有全网同步功能了。&lt;/p>
-&lt;h2 id="其他">
-&lt;a class="header-anchor" href="#%e5%85%b6%e4%bb%96">&lt;/a>
-其他
-&lt;/h2>&lt;p>因为组件除了依赖公网ip，一般大厂的服务很稳，所以大部分都是本地出问题，而本地的部署一般在手边，很容易就解决了，所以整套方案对个人来说很稳定，我这边经历过断网，本地电脑断电这些问题，文件也没有丢失。&lt;/p>
-&lt;p>同时，本地的这个Ubuntu电脑是一个笔记本，还挂着pt共享等服务。云端的服务器如果有其他需求也可以互不干扰。&lt;/p>
-&lt;p>要注意实现的时候，zfs文件系统应该要覆盖盘上的内容的，所以相关命令小心，做好文件备份。&lt;/p>
-&lt;h2 id="重新开始的难度">
-&lt;a class="header-anchor" href="#%e9%87%8d%e6%96%b0%e5%bc%80%e5%a7%8b%e7%9a%84%e9%9a%be%e5%ba%a6">&lt;/a>
-重新开始的难度
-&lt;/h2>&lt;p>如上面所述，云服务器上需要一个frp服务，这个有很多一键安装的脚本，然后开启systemd服务就可以。
-本地硬盘，但一般不移动，风险较低。这里最薄弱的可能是本地网络，需要查看网络连接情况。云盘和linux本身长期运行很稳定。&lt;/p></description></item><item><title>无人机协作调研</title><link>https://curious-energy.github.io/post/uav_swarm_tech_survey/</link><pubDate>Fri, 21 Feb 2025 17:23:49 +0800</pubDate><guid>https://curious-energy.github.io/post/uav_swarm_tech_survey/</guid><description>&lt;blockquote>
-&lt;p>以下的内容来源于徐浩博士的一个讲座。&lt;/p>
-&lt;/blockquote>
-&lt;p>Xu Hao(徐浩)&lt;/p>
-&lt;h1 id="主要内容">
-&lt;a class="header-anchor" href="#%e4%b8%bb%e8%a6%81%e5%86%85%e5%ae%b9">&lt;/a>
-主要内容：
-&lt;/h1>&lt;ol>
-&lt;li>从无人机单机智能到无人机集群&lt;/li>
-&lt;li>用于无人机集群的去中心化视觉一惯性-UWB相对定位&lt;/li>
-&lt;li>Omni-Swarm:具有全局一致性的去中心化全向视觉-惯性-UWB无人机集群状态估计&lt;/li>
-&lt;li>分布式协同SLAM(Distributed Collaborative SLAM)基础和BDPGO(平衡分布式位姿图优化)&lt;/li>
-&lt;li>$D^2$SLAM:去中心化和分布式无人机协同定位与建图(CSLAM)系统&lt;/li>
-&lt;li>总结和未来工作&lt;/li>
-&lt;/ol>
-&lt;h1 id="主要依托的软硬件情况">
-&lt;a class="header-anchor" href="#%e4%b8%bb%e8%a6%81%e4%be%9d%e6%89%98%e7%9a%84%e8%bd%af%e7%a1%ac%e4%bb%b6%e6%83%85%e5%86%b5">&lt;/a>
-主要依托的软硬件情况：
-&lt;/h1>&lt;p>集群通讯（规模大后很复杂）wifi信息广播，mesh网络路由&lt;/p>
-&lt;p>中心式，依赖中心 地面站&lt;/p>
-&lt;p>区分去中心化，分布式
-去中心化，没有中心节点但需要
-分布式，可以有中心节点，分担计算和探索&lt;/p>
-&lt;p>联合定位，相对定位（避障）
-（互相看到，可以实现相对定位精度提升）
-全局一致性（地图）&lt;/p>
-&lt;p>单目初始化 刚开始需要合适运动&lt;/p>
-&lt;p>uwb超宽带通讯，脉冲
-测距，无定向信息，精度10厘米左右内
-容易被遮挡和电子干扰
-粗略定位&lt;/p>
-&lt;p>wifi, ns级别
-无线随意网络 (Wireless ad hoc network)&lt;/p>
-&lt;p>vins-fusion实时VIO作为基础&lt;/p>
-&lt;p>无人机集群，无人机间很相似&lt;/p>
-&lt;p>（uwb测量需要相对运动）在uwb的粗略定位上，使用yolov3来对无人机进行区分（识别，跟踪），结合视觉信息来使得定位达到几厘米定位误差。&lt;/p>
-&lt;p>VIO长时间会飘，导致无法全局一致性&lt;/p>
-&lt;h1 id="omni-swarm-鱼眼相机上下两个每个fov大约235扩大观察范围地面特征点来快速初始化和全局定位">
-&lt;a class="header-anchor" href="#omni-swarm-%e9%b1%bc%e7%9c%bc%e7%9b%b8%e6%9c%ba%e4%b8%8a%e4%b8%8b%e4%b8%a4%e4%b8%aa%e6%af%8f%e4%b8%aafov%e5%a4%a7%e7%ba%a6235%e6%89%a9%e5%a4%a7%e8%a7%82%e5%af%9f%e8%8c%83%e5%9b%b4%e5%9c%b0%e9%9d%a2%e7%89%b9%e5%be%81%e7%82%b9%e6%9d%a5%e5%bf%ab%e9%80%9f%e5%88%9d%e5%a7%8b%e5%8c%96%e5%92%8c%e5%85%a8%e5%b1%80%e5%ae%9a%e4%bd%8d">&lt;/a>
-Omni-Swarm, 鱼眼相机（上下两个，每个FOV大约235°）扩大观察范围，地面特征点来快速初始化和全局定位。
-&lt;/h1>&lt;p>VIO: vins-fisheye
-mobileNetVLAD全局描述子(关键帧)
-Superpoint特征描述子
-Faiss建立全局描述子数据库
-视觉前端适合使用神经网络，后端进行图优化&lt;/p>
-&lt;h1 id="racer去中心化多无人机系统的快速协作探索">
-&lt;a class="header-anchor" href="#racer%e5%8e%bb%e4%b8%ad%e5%bf%83%e5%8c%96%e5%a4%9a%e6%97%a0%e4%ba%ba%e6%9c%ba%e7%b3%bb%e7%bb%9f%e7%9a%84%e5%bf%ab%e9%80%9f%e5%8d%8f%e4%bd%9c%e6%8e%a2%e7%b4%a2">&lt;/a>
-RACER:去中心化多无人机系统的快速协作探索
-&lt;/h1>&lt;p>Zhou Boyu（）
-realscene双目版本
-优势：达到了精准的状态估计和全局一致性保障，基于地图的快速初始化
-劣势：计算冗余，重复计算，对于大规模100架计算不过来
-全局一致性（地图上使用），对于远距离的无人机间，具体是多远并不重要。&lt;/p>
-&lt;p>Distributed mapping with privacy and communication constraints.&lt;/p>
-&lt;p>BDPGO: balanced distributed pose graph optimization framework for swarm robotics
-分布式优化，平衡计算量，计算时间优化&lt;/p></description></item><item><title>关于</title><link>https://curious-energy.github.io/about/</link><pubDate>Thu, 09 Jun 2022 20:12:52 +0800</pubDate><guid>https://curious-energy.github.io/about/</guid><description>&lt;h1 id="建立目的">
+&lt;/h2>&lt;p>完全控制，没有广告，纯净。&lt;/p></description></item><item><title>关于</title><link>https://curious-energy.github.io/about/</link><pubDate>Thu, 09 Jun 2022 20:12:52 +0800</pubDate><guid>https://curious-energy.github.io/about/</guid><description>&lt;h1 id="建立目的">
 &lt;a class="header-anchor" href="#%e5%bb%ba%e7%ab%8b%e7%9b%ae%e7%9a%84">&lt;/a>
 建立目的
 &lt;/h1>&lt;p>还是自己的地盘自己做主，一切比较方便。&lt;/p>
