@@ -4,15 +4,6 @@ draft = false
 title = '一些网站使用上的备忘录'
 categories = []
 tags = []
-
-+++
-
-
-
-+++
-date = '2025-02-20T17:55:43+08:00'
-draft = false
-title = '一些网站使用上的备忘录'
 math = true
 +++
 
@@ -70,4 +61,3 @@ $$
 
 ## 其他
 > 不知道这个可以不可以正常使用
-

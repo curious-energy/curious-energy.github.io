@@ -4,19 +4,7 @@ draft = false
 title = '博客可视化操作界面'
 categories = []
 tags = []
-
 +++
-
-
-+++
-date = '2025-12-16T19:08:30.650Z'
-draft = false
-title = '博客可视化操作界面'
-categories = []
-tags = []
-
-+++
-
 
 ## 缘起
 每次博客的启动和运行逻辑不想记那么清楚，因为产出内容，而不是受限于各种因素而导致产出内容的愿望转移。
@@ -26,4 +14,3 @@ tags = []
 
 ## 实现的样子
 ![样例](https://github.com/curious-energy/picx-images-hosting/raw/master/image.6m4czzusr9.webp)
-

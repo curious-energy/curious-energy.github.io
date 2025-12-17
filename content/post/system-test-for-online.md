@@ -4,10 +4,7 @@ draft = false
 title = '博客系统上线测试'
 categories = ['技术', '软件']
 tags = ['hugo', 'gemini3pro']
-
 +++
-
-
 
 ## 测试内容
 将博客同步到远程，也就是网络空间。
@@ -17,6 +14,3 @@ tags = ['hugo', 'gemini3pro']
 
 ## 优势
 完全控制，没有广告，纯净。
-
-
-
