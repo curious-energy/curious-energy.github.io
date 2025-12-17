@@ -1,0 +1,1352 @@
+<!doctype html>
+<html
+  lang="zh-cn" 
+  
+    data-theme-mode="auto"
+  
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/>
+
+
+
+
+
+
+
+  
+
+<title>
+  文章加密测试 | Curious Enegry
+</title>
+<meta
+  name="description"
+  content="一个私人博客"
+/>
+
+
+
+
+
+
+
+
+
+
+<script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"clipboard\":{\"copyright\":{\"content\":\"本文版权：本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！\",\"count\":77,\"enable\":false},\"fail\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"success\":\"复制成功(*^▽^*)\"},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_0khxww3tj3q9\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":\"本文最后更新于 {time}，请注意文中内容可能已经发生变化。\"}}");
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+    
+  
+
+  
+  
+  
+    
+  
+
+  
+    
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+
+
+
+
+
+
+  <link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_0khxww3tj3q9.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+
+
+
+  
+
+
+
+
+
+
+ <link rel="stylesheet" href="/css/loader.css" />
+
+
+
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="文章加密测试 | Curious Enegry" />
+  <meta
+    property="og:description"
+    content="一个私人博客"
+  />
+  <meta property="og:url" content="http://localhost:1313/post/password-artical-test/" />
+  <meta
+    property="og:site_name"
+    content="Machine Space"
+  />
+  <meta
+    property="og:image"
+    content="/"
+  />
+  <meta property="article:author" content="Curious Enegry" />
+  <meta property="article:published_time" content="2025-12-16T20:05:38&#43;00:00" />
+  <meta property="article:modified_time" content="2025-12-16T20:05:38&#43;00:00" />
+  
+  
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/" />
+  
+  
+  
+  
+  
+
+
+
+
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+
+
+
+ <link rel="stylesheet" href="/css/main.css" />
+
+
+
+
+
+  <link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+
+
+
+
+
+
+  <link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.9/dist/katex.min.css"
+    onload="this.onload=null;this.rel='stylesheet'"
+  />
+
+
+
+
+  
+
+
+  <link rel="stylesheet" href="https://npm.webcache.cn/@waline/client@2.15.8/dist/waline.css" />
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    
+    
+    
+    
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"
+  ></script>
+
+
+
+
+
+  
+
+
+  <link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.0/dist/aos.css" />
+
+
+
+
+
+  </head>
+  <body>
+    
+  <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi">
+        
+          <img src="/images/infinity-100.png" alt="loading" />
+        
+      </div>
+      <div class="loading-word">加载中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var startLoading = () => {
+      time = Date.now();
+      document.getElementById('loader').classList.remove("loading");
+    }
+    var endLoading = () => {
+      if (!time) {
+        document.body.style.overflow = 'auto';
+        document.getElementById('loader').classList.add("loading");
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          document.body.style.overflow = 'auto';
+          document.getElementById('loader').classList.add("loading");
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    document.getElementById('loader').addEventListener('click', endLoading);
+  </script>
+
+
+<div id="copy-tooltip" style="pointer-events: none; opacity: 0; transition: all 0.2s ease; position: fixed;top: 50%;left: 50%;z-index: 999;transform: translate(-50%, -50%);color: white;background: rgba(0, 0, 0, 0.5);padding: 10px 15px;border-radius: 10px;">
+</div>
+
+
+    <div id="container">
+      <div id="wrap">
+        
+<div id="header-nav">
+  <nav id="main-nav">
+    
+      <span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '>
+          
+            &#xe617;
+          
+        </div>
+        <a class="main-nav-link" href="/">首页</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '>
+          
+            &#xe613;
+          
+        </div>
+        <a class="main-nav-link" href="/archives">归档</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '>
+          
+            &#xe618;
+          
+        </div>
+        <a class="main-nav-link" href="/about">关于</a>
+      </span>
+    
+      <span class="main-nav-link-wrap">
+        <div class='main-nav-icon icon '>
+          
+            &#xe639;
+          
+        </div>
+        <a class="main-nav-link" href="/friend">友链</a>
+      </span>
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+    
+      <a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索"></a>
+    
+  </nav>
+</div>
+<header id="header">
+  
+    <picture>
+      
+    </picture>
+    
+      <img fetchpriority="high" src="/images/c_g.jpg" alt="文章加密测试">
+    
+  
+
+  <div id="header-outer">
+    <div id="header-title">
+      
+        
+        
+          
+        
+  
+        
+          <a href="/" id="logo">
+            <h1 data-aos="slide-up">文章加密测试</h1>
+          </a>
+        
+      
+  
+      
+        
+        
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+        <div id="content"
+          
+          class="sidebar-right"  >
+          <aside id="sidebar">
+  
+  
+  <div class="sidebar-wrapper wrap-sticky">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    >
+      
+        <div class="sidebar-toc-sidebar">
+          <div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+        </div>
+        <div class="sidebar-common-sidebar hidden">
+          
+<div class="sidebar-author">
+  <img
+    data-src="/avatar/free.webp"
+    data-sizes="auto"
+    alt="Curious Enegry"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Curious Enegry</div>
+  <div class="sidebar-description">一个私人博客</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    
+    <div class="sidebar-state-number">5</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      2
+    </div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">1</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+    <div class="icon-bilibili sidebar-social-icon">
+      <a
+        href="https://space.bilibili.com/94176958"
+        itemprop="url"
+        target="_blank"
+        aria-label="bilibili"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+    <div class="icon-email sidebar-social-icon">
+      <a
+        href="lixin65656@gmail.com"
+        itemprop="url"
+        target="_blank"
+        aria-label="email"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+    <div class="icon-github sidebar-social-icon">
+      <a
+        href="https://github.com/curious-energy"
+        itemprop="url"
+        target="_blank"
+        aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon '>
+        
+          &#xe617;
+        
+      </div>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon '>
+        
+          &#xe613;
+        
+      </div>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon '>
+        
+          &#xe618;
+        
+      </div>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon '>
+        
+          &#xe639;
+        
+      </div>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+
+        </div>
+      
+
+      
+        <div class="sidebar-btn-wrapper" style="position:static">
+          <div class="sidebar-toc-btn current"></div>
+          <div class="sidebar-common-btn"></div>
+        </div>
+      
+    </div>
+  </div>
+
+  <div class="sidebar-widget">
+    
+  </div>
+</aside>
+
+          <section id="main">
+<article class="post-detail">
+  <header class="post-header">
+    <h1 class="post-title">文章加密测试</h1>
+    <div class="post-meta">
+      
+      <time datetime="2025-12-16T20:05:38Z">
+        2025-12-16
+      </time>
+      
+      
+    </div>
+  </header>
+
+  <div class="post-content">
+    
+    
+    <div id="encrypted-content" class="encrypted-article">
+      <div class="password-form" id="password-form">
+        <h3>🔒 这是一篇加密文章</h3>
+        <p>请输入密码查看内容</p>
+        <input 
+          type="password" 
+          id="article-password" 
+          placeholder="请输入密码"
+          onkeypress="if(event.keyCode===13) decryptArticle()"
+        >
+        <button onclick="decryptArticle()">解锁</button>
+        <p id="decrypt-error" class="error-message" style="display: none;">密码错误，请重试</p>
+        <p id="debug-info" style="display: none; color: #999; font-size: 12px; margin-top: 10px;"></p>
+      </div>
+      <div id="decrypted-content" class="article-content" style="display: none;">
+        
+      </div>
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.2/marked.min.js"></script>
+
+    
+    <script>
+      
+      window.decryptArticle = function() {
+        console.warn("Decrypt function not initialized yet.");
+      };
+
+      (function() {
+        
+        try {
+            
+           const encryptedDataRaw = `U2FsdGVkX182yX5yKfwLtz7necPdaoDaiKgP3RcsNkh\u002bQnKmFkphUZagrnuJ21XP`;
+           
+           const encryptedData = encryptedDataRaw ? encryptedDataRaw : "\"U2FsdGVkX182yX5yKfwLtz7necPdaoDaiKgP3RcsNkh+QnKmFkphUZagrnuJ21XP\"";
+           
+           const correctPassword = "\"as123456\"";
+
+          
+          window.decryptArticle = function() {
+            const passwordField = document.getElementById('article-password');
+            const password = passwordField.value;
+            const errorEl = document.getElementById('decrypt-error');
+            const debugEl = document.getElementById('debug-info');
+            
+            if (!password) {
+              errorEl.textContent = '请输入密码';
+              errorEl.style.display = 'block';
+              return;
+            }
+            
+            try {
+              if (!encryptedData) {
+                throw new Error("文章没有加密内容");
+              }
+
+              
+              
+              const cleanData = encryptedData.replace(/\s/g, '');
+              
+              
+              const decryptedBytes = CryptoJS.AES.decrypt(cleanData, password);
+              
+              
+              const decrypted = decryptedBytes.toString(CryptoJS.enc.Utf8);
+              
+              if (decrypted && decrypted.length > 0) {
+                
+                document.getElementById('password-form').style.display = 'none';
+                const contentEl = document.getElementById('decrypted-content');
+                
+                
+                if (typeof marked !== 'undefined') {
+                  
+                  const parsed = marked.parse ? marked.parse(decrypted) : marked(decrypted);
+                  contentEl.innerHTML = parsed;
+                } else if (window.marked) {
+                   const parsed = window.marked.parse ? window.marked.parse(decrypted) : window.marked(decrypted);
+                   contentEl.innerHTML = parsed;
+                } else {
+                  
+                  console.warn("marked library not loaded, showing plain text");
+                  contentEl.innerHTML = '<pre style="white-space: pre-wrap;">' + decrypted + '</pre>';
+                }
+                
+                contentEl.style.display = 'block';
+                
+                
+                try {
+                  sessionStorage.setItem('article_' + window.location.pathname, password);
+                } catch(e) {}
+              } else {
+                errorEl.textContent = '密码错误，请重试';
+                errorEl.style.display = 'block';
+              }
+            } catch (e) {
+              console.error('解密错误:', e);
+              errorEl.textContent = '解密失败：' + (e.message || "未知错误");
+              errorEl.style.display = 'block';
+              debugEl.textContent = "Debug: " + e.message;
+              debugEl.style.display = 'block';
+            }
+          };
+
+          
+          
+          const autoDecrypt = function() {
+            try {
+              const savedPassword = sessionStorage.getItem('article_' + window.location.pathname);
+              if (savedPassword) {
+                const passField = document.getElementById('article-password');
+                if (passField) {
+                    passField.value = savedPassword;
+                    window.decryptArticle();
+                }
+              }
+            } catch(e) {}
+          };
+
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', autoDecrypt);
+          } else {
+            autoDecrypt();
+          }
+          
+        } catch (e) {
+          console.error("Initialization error:", e);
+        }
+      })();
+    </script>
+
+    <style>
+      .encrypted-article {
+        min-height: 400px;
+        padding: 40px 20px;
+      }
+      
+      .password-form {
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 40px;
+        border: 2px solid #e4e7ed;
+        border-radius: 8px;
+        background: #f9f9f9;
+      }
+      
+      .password-form h3 {
+        margin-bottom: 10px;
+        color: #333;
+      }
+      
+      .password-form p {
+        margin-bottom: 20px;
+        color: #666;
+      }
+      
+      .password-form input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #dcdfe6;
+        border-radius: 8px;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+      
+      .password-form input:focus {
+        outline: none;
+        border-color: #409eff;
+      }
+      
+      .password-form button {
+        width: 100%;
+        padding: 12px;
+        background: #409eff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      
+      .password-form button:hover {
+        background: #66b1ff;
+      }
+      
+      .error-message {
+        color: #f56c6c;
+        font-size: 13px;
+        margin-top: 10px;
+      }
+      
+      .article-content {
+        animation: fadeIn 0.5s ease;
+      }
+      
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+    
+  </div>
+
+  
+</article>
+</section>
+        </div>
+        
+        
+        
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+
+<footer id="footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    <div>
+      <span class="icon-copyright"></span>
+      2025 -
+      2025
+      <span class="footer-info-sep rotate"></span>
+      Curious Enegry
+    </div>
+    
+      <div>
+        基于&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          >Hugo</a
+        >&nbsp; Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          >Reimu</a
+        >
+      </div>
+    
+    
+      <div>
+        <span class="icon-brush"
+          >&nbsp;
+            234
+          </span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;
+          
+          
+
+          00:05
+        </span>
+      </div>
+    
+    
+    
+    
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div>
+    
+  </div>
+</footer>
+
+        
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav">
+  <div class="sidebar-wrap">
+    
+      <div class="sidebar-toc-sidebar">
+        <div class="sidebar-toc">
+  <h3 class="toc-title">文章目录</h3>
+  <div class="sidebar-toc-wrapper toc-div-class">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+      </div>
+      <div class="sidebar-common-sidebar hidden">
+        
+<div class="sidebar-author">
+  <img
+    data-src="/avatar/free.webp"
+    data-sizes="auto"
+    alt="Curious Enegry"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Curious Enegry</div>
+  <div class="sidebar-description">一个私人博客</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    
+    <div class="sidebar-state-number">5</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      2
+    </div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">1</div>
+  </div>
+</div>
+<div class="sidebar-social">
+  
+    <div class="icon-bilibili sidebar-social-icon">
+      <a
+        href="https://space.bilibili.com/94176958"
+        itemprop="url"
+        target="_blank"
+        aria-label="bilibili"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+    <div class="icon-email sidebar-social-icon">
+      <a
+        href="lixin65656@gmail.com"
+        itemprop="url"
+        target="_blank"
+        aria-label="email"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+    <div class="icon-github sidebar-social-icon">
+      <a
+        href="https://github.com/curious-energy"
+        itemprop="url"
+        target="_blank"
+        aria-label="github"
+        rel="noopener external nofollow noreferrer"
+      ></a>
+    </div>
+  
+</div>
+<div class="sidebar-menu">
+  
+    <div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a>
+      <div class='sidebar-menu-icon icon '>
+        
+          &#xe617;
+        
+      </div>
+      <div class="sidebar-menu-link">首页</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a>
+      <div class='sidebar-menu-icon icon '>
+        
+          &#xe613;
+        
+      </div>
+      <div class="sidebar-menu-link">归档</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a>
+      <div class='sidebar-menu-icon icon '>
+        
+          &#xe618;
+        
+      </div>
+      <div class="sidebar-menu-link">关于</div>
+    </div>
+  
+    <div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a>
+      <div class='sidebar-menu-icon icon '>
+        
+          &#xe639;
+        
+      </div>
+      <div class="sidebar-menu-link">友链</div>
+    </div>
+  
+</div>
+
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-btn-wrapper">
+      <div class="sidebar-toc-btn current"></div>
+      <div class="sidebar-common-btn"></div>
+    </div>
+  
+</nav>
+
+    </div>
+    
+      <div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div class="reimu-search-input" id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div>
+    
+    
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    
+    
+    
+    
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"
+  ></script>
+
+
+
+
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    
+    
+    
+    
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"
+  ></script>
+
+
+
+
+
+
+
+
+
+  
+      
+      <script src="/js/main.js" ></script>
+      
+
+
+
+  
+
+
+
+
+
+  
+      
+      <script src="/js/aos.js" ></script>
+      
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+
+
+
+
+
+
+  
+      
+      <script src="/js/pjax_main.js" data-pjax></script>
+      
+
+
+
+  <script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "NKWANHPOGK",
+        apiKey: "8fd0a959209029a530ad641e4c45265b",
+        indexName: "algolia",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": "搜索.....",
+          "hits_empty": "未发现与 「${query}」相关内容",
+          "hits_stats": "找到${hits}条结果（用时 ${time} ms）"
+        }
+      }
+    };
+  </script>
+  
+
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    defer
+    
+    
+    
+    integrity="sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S&#43;jQz7ZBtQXnsXmD&#43;9jDOOY4cL6dCPzlrk" crossorigin="anonymous"
+  ></script>
+
+
+  
+
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/instantsearch.js@4.56.1/dist/instantsearch.production.min.js"
+    defer
+    
+    
+    
+    integrity="sha384-hHJCflT4KBLQyHfKO9vpstIcFKn/Y&#43;KHTORelMMEn7mOp2AVPp&#43;7fr03dLgZiV3J" crossorigin="anonymous"
+  ></script>
+
+
+  
+
+
+
+
+
+  
+      
+      <script src="/js/algolia_search.js" ></script>
+      
+
+
+
+
+  
+
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/mouse-firework@0.1.0/dist/index.umd.js"
+    
+    
+    
+    
+    integrity="sha384-KM6i7tu43nYd6e0beIljxHMC5tZc58XBDu7pPA58w50h18Jsx7gLdimfS09RXlKv" crossorigin="anonymous"
+  ></script>
+
+
+<script>
+  if (window.firework) {
+    const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"#17e8b7\",\"#46ebc4\",\"#7febd1\",\"#bbf0e3\",\"#d5ebe6\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"#00ffbf\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+    options.excludeElements = options.excludeelements;
+    delete options.excludeelements;
+    window.firework(options);
+  }
+</script>
+
+
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+    
+      
+      
+        
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "Curious Enegry",
+          title: "文章加密测试",
+          url: "http:\/\/localhost:1313\/post\/password-artical-test\/",
+          description: "此文章已加密，请输入密码查看。\n",
+          cover: "http:\/\/localhost:1313\/images\/c_g.jpg",
+        };
+      </script>
+    
+    
+    
+      
+
+
+
+
+
+  
+      
+      <script src="/js/insert_highlight.js" data-pjax></script>
+      
+
+      
+      
+      
+      
+      <script type="module" data-pjax>
+        const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;
+
+        const pswp = () => {
+          if (_$$('.article-entry a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-entry',
+              children: 'a.article-gallery-item',
+              pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")
+            }).init();
+          }
+          if(_$$('.article-gallery a.article-gallery-item').length > 0) {
+            new PhotoSwipeLightbox({
+              gallery: '.article-gallery',
+              children: 'a.article-gallery-item',
+              pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")
+            }).init();
+          }
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script>
+      
+
+
+
+
+
+
+<script data-pjax type="module">
+  const { init } = await safeImport('https:\/\/npm.webcache.cn\/@waline\/client@2.15.8\/dist\/waline.mjs', 'sha384-9sbqJjrfGjbkI6\/PI4nU\/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH\/KinBEAZII\/5');
+  if(_$('.wcomment')) {
+    window.walineInstance = init({
+      el: '.wcomment',
+      serverURL: 'https:\/\/waline-xi-lilac.vercel.app\/',
+      lang: 'zh-CN',
+      locale: JSON.parse("{}"),
+      emoji: JSON.parse("[\"https://unpkg.com/@waline/emojis@1.2.0/weibo\",\"https://unpkg.com/@waline/emojis@1.2.0/alus\",\"https://unpkg.com/@waline/emojis@1.2.0/bilibili\",\"https://unpkg.com/@waline/emojis@1.2.0/qq\",\"https://unpkg.com/@waline/emojis@1.2.0/tieba\",\"https://unpkg.com/@waline/emojis@1.2.0/tw-emoji\"]"),
+      meta: JSON.parse("[\"nick\",\"mail\",\"link\"]"),
+      requiredMeta: JSON.parse("[\"nick\",\"mail\"]"),
+      wordLimit:  0 ,
+      comment: true,
+      pageSize:  10 ,
+      dark: 'html[data-theme="dark"]',
+      pageview:  true ,
+    });
+  }
+</script>
+
+
+
+
+
+
+
+      
+    
+    
+  </div>
+</div>
+
+
+
+
+  
+
+  
+  
+  
+  
+  
+  
+  <script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    
+    async
+    
+    
+    integrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"
+  ></script>
+
+
+
+
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script>
+
+
+<script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script>
+
+
+
+
+  </body>
+</html>

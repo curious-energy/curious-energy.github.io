@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Machine Space</title><link>https://curious-energy.github.io/algolia.json</link><description>Recent content on Machine Space</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Tue, 26 Jul 2022 21:46:25 +0800</lastBuildDate><atom:link href="https://curious-energy.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://curious-energy.github.io/about/</link><pubDate>Thu, 09 Jun 2022 20:12:52 +0800</pubDate><guid>https://curious-energy.github.io/about/</guid><description>建立目的 还是自己的地盘自己做主，一切比较方便。
+使用了github为主的服务搭建，对于我来说是够用了，初期分享一些技术相关的内容。
+个人简介 学生，做一些计算机视觉相关的算法研究。 Student, conducting some algorithm research related to computer vision.
+感兴趣话题：机器人，人工智能，机器视觉，SLAM，三维重建，视觉定位
+Interested Topics: Robotics:
+Robot perception and navigation using computer vision. Artificial Intelligence (AI):
+Deep learning for computer vision tasks (object detection, segmentation, recognition). Machine Vision:
+Image processing and analysis techniques.
+Feature extraction and matching.
+Pattern recognition and classification.
+SLAM (Simultaneous Localization and Mapping):
+Visual SLAM algorithms (monocular, stereo, RGB-D).
+Loop closure detection and optimization.</description></item><item><title>友情链接</title><link>https://curious-energy.github.io/friend/</link><pubDate>Thu, 09 Jun 2022 20:12:52 +0800</pubDate><guid>https://curious-energy.github.io/friend/</guid><description>这一页不清楚会不会使用&amp;hellip;
+申请方法 添加本站后，在本页留言，格式如下 ```yml - name: #您的名字 url: #您的网址 desc: #简短描述 image: #一张图片 ``` 小伙伴们 D-Sketon Hexo 建站 Curious Energy 个人博客</description></item></channel></rss>
