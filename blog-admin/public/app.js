@@ -183,15 +183,29 @@ const app = createApp({
     // 解析文章内容
     parseContent(content) {
       // 解析Front Matter
-      const frontMatterMatch = content.match(/^\+\+\+\n([\s\S]*?)\n\+\+\+\n([\s\S]*)$/);
+      // 优化正则：允许开头有空白，更稳健地匹配第一个 +++ 块
+      const frontMatterRegex = /^\s*\+\+\+\s*\n([\s\S]*?)\n\s*\+\+\+\s*\n([\s\S]*)$/;
+      let match = content.match(frontMatterRegex);
       
       let markdownText = content;
       
-      if (frontMatterMatch) {
-        const frontMatterText = frontMatterMatch[1];
-        markdownText = frontMatterMatch[2];
+      if (match) {
+        const frontMatterText = match[1];
+        markdownText = match[2];
         
-    // 解析Front Matter字段
+        // 【关键修复】：检查正文是否依然包含残留的 Front Matter（应对之前保存错误导致的重复头部）
+        // 如果正文开头看起来还是 Front Matter，继续剥离，直到只剩真正的正文
+        while (true) {
+            const secondaryMatch = markdownText.match(frontMatterRegex);
+            if (secondaryMatch) {
+                console.warn('检测到重复的 Front Matter，已自动清理旧头部');
+                markdownText = secondaryMatch[2];
+            } else {
+                break;
+            }
+        }
+        
+        // 解析Front Matter字段
         this.frontMatter = {
           title: this.extractField(frontMatterText, 'title') || '',
           draft: this.extractField(frontMatterText, 'draft') === 'true',

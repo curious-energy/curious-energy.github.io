@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Machine Space</title><link>https://curious-energy.github.io/tags/hugo/</link><description>Recent content in Hugo on Machine Space</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 17 Dec 2025 20:03:54 +0000</lastBuildDate><atom:link href="https://curious-energy.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>博客可视化操作界面</title><link>https://curious-energy.github.io/post/blog_system_for_user_experience/</link><pubDate>Wed, 17 Dec 2025 20:03:54 +0000</pubDate><guid>https://curious-energy.github.io/post/blog_system_for_user_experience/</guid><description>&lt;h2 id="目标">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>可视化博客 on Machine Space</title><link>https://curious-energy.github.io/categories/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8D%9A%E5%AE%A2/</link><description>Recent content in 可视化博客 on Machine Space</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Wed, 17 Dec 2025 20:03:54 +0000</lastBuildDate><atom:link href="https://curious-energy.github.io/categories/%E5%8F%AF%E8%A7%86%E5%8C%96%E5%8D%9A%E5%AE%A2/index.xml" rel="self" type="application/rss+xml"/><item><title>博客可视化操作界面</title><link>https://curious-energy.github.io/post/blog_system_for_user_experience/</link><pubDate>Wed, 17 Dec 2025 20:03:54 +0000</pubDate><guid>https://curious-energy.github.io/post/blog_system_for_user_experience/</guid><description>&lt;h2 id="目标">
 &lt;a class="header-anchor" href="#%e7%9b%ae%e6%a0%87">&lt;/a>
 目标
 &lt;/h2>&lt;p>每次博客的启动和运行逻辑不想记那么清楚，因为产出内容，而不是受限于各种因素而导致产出内容的愿望转移。&lt;/p>
@@ -19,15 +19,4 @@
 &lt;p>多了加密功能，我只是感觉我有需求，但是这个加密强度一般，可能稍微懂一些的人就能破解。点击加密文章，然后输入密码。&lt;/p>
 &lt;p>剩下就是自动保存功能和手动保存，删除功能了。当然我不依赖自动保存功能，但至少电脑只要不意外断电都有救，算是个保险。&lt;/p>
 &lt;p>右上角还有预览，上线前确定一下效果，基本和网页一样，也是直接继承的hugo原本的功能，这就是一个壳子。
-最后呢，点击发布博客，直接上线，结合hugo自带的&lt;em>Git Action&lt;/em>，完成内容上线。基本满足我日常使用。&lt;/p></description></item><item><title>博客系统上线测试</title><link>https://curious-energy.github.io/post/system-test-for-online/</link><pubDate>Wed, 17 Dec 2025 19:53:58 +0000</pubDate><guid>https://curious-energy.github.io/post/system-test-for-online/</guid><description>&lt;h2 id="测试内容">
-&lt;a class="header-anchor" href="#%e6%b5%8b%e8%af%95%e5%86%85%e5%ae%b9">&lt;/a>
-测试内容
-&lt;/h2>&lt;p>将博客同步到远程，也就是网络空间。&lt;/p>
-&lt;h2 id="主要目的">
-&lt;a class="header-anchor" href="#%e4%b8%bb%e8%a6%81%e7%9b%ae%e7%9a%84">&lt;/a>
-主要目的
-&lt;/h2>&lt;p>网络空间内容分享。&lt;/p>
-&lt;h2 id="优势">
-&lt;a class="header-anchor" href="#%e4%bc%98%e5%8a%bf">&lt;/a>
-优势
-&lt;/h2>&lt;p>完全控制，没有广告，纯净。&lt;/p></description></item></channel></rss>
+最后呢，点击发布博客，直接上线，结合hugo自带的&lt;em>Git Action&lt;/em>，完成内容上线。基本满足我日常使用。&lt;/p></description></item></channel></rss>
