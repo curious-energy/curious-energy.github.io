@@ -1,0 +1,8 @@
+- name: D-Sketon
+  url: https://d-sketon.github.io/
+  desc: Hexo 建站
+  image: https://d-sketon.github.io/avatar/avatar.webp
+- name: "Curious Energy"
+  url: https://curious-energy.github.io/
+  desc: 个人博客
+  image: https://curious-energy.github.io/avatar/free.webp

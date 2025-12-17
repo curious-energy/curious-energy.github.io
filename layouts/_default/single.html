@@ -1,0 +1,137 @@
+{{ define "main" }}
+<article class="h-entry article" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="{{ .Site.Params.animation.options.article.whole }}">
+    <div class="article-meta">
+      {{ partial "post/date.html" . }}
+      {{ partial "post/category.html" . }}
+    </div>
+    <div class="hr-line"></div>
+    {{ partial "post/gallery.html" . }}
+    <div class="e-content article-entry" itemprop="articleBody">
+      {{ if .Site.Params.outdate.enable }}
+        <blockquote id="outdate-blockquote" style="display: none;">
+          <p></p>
+        </blockquote>
+      {{ end }}
+
+      {{ if .Params.encrypted }}
+        <!-- Encryption Logic Start -->
+        <div id="encrypted-wrapper">
+          <div class="password-form" id="password-form">
+            <div style="text-align: center; padding: 40px 0;">
+                <h3 style="margin-bottom: 10px;">🔒 加密文章</h3>
+                <p style="margin-bottom: 20px; color: #666;">请输入密码查看内容</p>
+                <div style="display: flex; justify-content: center; gap: 10px; max-width: 400px; margin: 0 auto;">
+                    <input 
+                      type="password" 
+                      id="article-password" 
+                      placeholder="请输入密码"
+                      style="flex: 1; padding: 10px; border: 1px solid #dcdfe6; border-radius: 4px;"
+                      onkeypress="if(event.keyCode===13) decryptArticle()"
+                    >
+                    <button 
+                        onclick="decryptArticle()"
+                        style="padding: 10px 20px; background: #ff5252; color: white; border: none; border-radius: 4px; cursor: pointer;"
+                    >解锁</button>
+                </div>
+                <p id="decrypt-error" class="error-message" style="display: none; color: #f56c6c; margin-top: 10px;">密码错误</p>
+            </div>
+          </div>
+          
+          <div id="decrypted-content" style="display: none;">
+            <!-- Content will be injected here and inherit .article-entry styles -->
+          </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.2/marked.min.js"></script>
+        <script>
+            window.decryptArticle = function() { console.warn("Loading..."); };
+            
+            (function() {
+                try {
+                    const encryptedDataRaw = `{{ .Params.encrypted_content }}`;
+                    const encryptedData = encryptedDataRaw ? encryptedDataRaw : {{ .Params.encrypted_content | default "" | jsonify }};
+                    
+                    window.decryptArticle = function() {
+                        const passField = document.getElementById('article-password');
+                        const password = passField.value;
+                        const errorEl = document.getElementById('decrypt-error');
+                        
+                        if (!password) { errorEl.style.display = 'block'; errorEl.textContent = '请输入密码'; return; }
+                        
+                        try {
+                            const cleanData = encryptedData.replace(/\s/g, '');
+                            const decryptedBytes = CryptoJS.AES.decrypt(cleanData, password);
+                            const decrypted = decryptedBytes.toString(CryptoJS.enc.Utf8);
+                            
+                            if (decrypted && decrypted.length > 0) {
+                                document.getElementById('password-form').style.display = 'none';
+                                const contentEl = document.getElementById('decrypted-content');
+                                
+                                if (typeof marked !== 'undefined') {
+                                    contentEl.innerHTML = marked.parse ? marked.parse(decrypted) : marked(decrypted);
+                                } else {
+                                    contentEl.innerHTML = '<pre>' + decrypted + '</pre>';
+                                }
+                                contentEl.style.display = 'block';
+                                sessionStorage.setItem('article_' + window.location.pathname, password);
+                            } else {
+                                throw new Error("Decrypt failed");
+                            }
+                        } catch (e) {
+                            console.error(e);
+                            errorEl.textContent = '密码错误';
+                            errorEl.style.display = 'block';
+                        }
+                    };
+
+                    // Auto decrypt
+                    const autoDecrypt = function() {
+                        const saved = sessionStorage.getItem('article_' + window.location.pathname);
+                        if (saved) {
+                            const f = document.getElementById('article-password');
+                            if(f) { f.value = saved; window.decryptArticle(); }
+                        }
+                    };
+                    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', autoDecrypt);
+                    else autoDecrypt();
+                } catch(e) { console.error(e); }
+            })();
+        </script>
+        <!-- Encryption Logic End -->
+      {{ else }}
+        {{ if and .Params.excerpt .Params.link }}
+            <p>{{ .Params.excerpt | safeHTML }}</p>
+            <p class="article-more-link">
+            <a href="{{ .Params.link }}"
+                >{{ .Site.Params.excerpt_link | default "Read More" }}</a
+            >
+            </p>
+        {{ else }}
+            {{ .Content | safeHTML }}
+        {{ end }}
+      {{ end }}
+    </div>
+    <footer class="article-footer">
+      {{ if or (eq .Params.copyright true) (and (not (eq .Params.copyright false)) .Site.Params.article_copyright.enable) }}
+        {{ partial "post/copyright.html" . }}
+      {{ end }}
+
+      {{ if or (eq .Params.sponsor true) (and (not (eq .Params.sponsor false)) .Site.Params.sponsor.enable) }}
+        {{ partial "post/sponsor.html" . }}
+      {{ end }}
+
+      {{ if reflect.IsSlice .Site.Params.share }}
+        {{ partial "post/share.html" . }}
+      {{ end }}
+      
+      {{ partial "post/tag.html" . }}
+    </footer>
+  </div>
+  {{ if in .Site.Params.mainSections .Type }}
+    {{ partial "post/nav.html" . }}
+  {{ end }}
+</article>
+{{ partial "partials/comment.html" . }}
+{{ end }}

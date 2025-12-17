@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>API测试</title>
+</head>
+<body>
+  <h1>API测试页面</h1>
+  <button onclick="testAPI()">测试获取文章列表</button>
+  <pre id="result"></pre>
+  
+  <script>
+    async function testAPI() {
+      try {
+        const response = await fetch('http://localhost:3000/api/posts');
+        const data = await response.json();
+        document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        document.getElementById('result').textContent = '错误: ' + error.message;
+      }
+    }
+  </script>
+</body>
+</html>
+

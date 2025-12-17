@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hugo 博客管理系统</title>
+  
+  <!-- 引入Vue 3 -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  
+  <!-- 引入Axios -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  
+  <!-- 引入CryptoJS（用于加密） -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .header {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .header h1 {
+      font-size: 24px;
+      color: #2c3e50;
+    }
+    
+    .header-actions {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .main-content {
+      display: flex;
+      gap: 20px;
+      min-height: calc(100vh - 140px);
+    }
+    
+    .sidebar {
+      flex: 0 0 350px;
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      overflow-y: auto;
+      max-height: calc(100vh - 140px);
+    }
+    
+    .editor-area {
+      flex: 1;
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+    
+    .btn-primary {
+      background: #409eff;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: #66b1ff;
+    }
+    
+    .btn-success {
+      background: #67c23a;
+      color: white;
+    }
+    
+    .btn-success:hover {
+      background: #85ce61;
+    }
+    
+    .btn-danger {
+      background: #f56c6c;
+      color: white;
+    }
+    
+    .btn-danger:hover {
+      background: #f78989;
+    }
+    
+    .btn-warning {
+      background: #e6a23c;
+      color: white;
+    }
+    
+    .btn-warning:hover {
+      background: #ebb563;
+    }
+    
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .post-list {
+      list-style: none;
+    }
+    
+    .post-item {
+      padding: 12px;
+      margin-bottom: 8px;
+      border: 1px solid #e4e7ed;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .post-item:hover {
+      border-color: #409eff;
+      background: #f0f9ff;
+    }
+    
+    .post-item.active {
+      border-color: #409eff;
+      background: #ecf5ff;
+    }
+    
+    .post-item-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .post-item-date {
+      font-size: 12px;
+      color: #909399;
+    }
+    
+    .badge {
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 3px;
+      margin-left: 6px;
+    }
+    
+    .badge-draft {
+      background: #e6a23c;
+      color: white;
+    }
+    
+    .badge-encrypted {
+      background: #f56c6c;
+      color: white;
+    }
+    
+    .editor-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e4e7ed;
+      flex-shrink: 0;
+    }
+    
+    .editor-toolbar-left {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    
+    .editor-toolbar-right {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .status-text {
+      font-size: 13px;
+      color: #67c23a;
+    }
+    
+    .input-group {
+      margin-bottom: 15px;
+      flex-shrink: 0;
+    }
+    
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    
+    .input-group input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #dcdfe6;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    
+    .input-group input:focus {
+      outline: none;
+      border-color: #409eff;
+    }
+    
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      flex-shrink: 0;
+    }
+    
+    .checkbox-group input[type="checkbox"] {
+      width: auto;
+    }
+    
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      min-width: 400px;
+      max-width: 600px;
+    }
+    
+    .modal-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: #909399;
+    }
+    
+    .empty-state-icon {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 15px 20px;
+      border-radius: 4px;
+      color: white;
+      z-index: 2000;
+      animation: slideIn 0.3s ease;
+    }
+    
+    .toast-success {
+      background: #67c23a;
+    }
+    
+    .toast-error {
+      background: #f56c6c;
+    }
+    
+    .toast-info {
+      background: #409eff;
+    }
+    
+    @keyframes slideIn {
+      from {
+        transform: translateX(400px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    
+    .search-box {
+      margin-bottom: 15px;
+    }
+    
+    .search-box input {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid #dcdfe6;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    
+    /* 原生编辑器样式 */
+    .native-editor {
+      width: 100%;
+      height: calc(100vh - 350px);
+      padding: 15px;
+      border: 1px solid #dcdfe6;
+      border-radius: 4px;
+      font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+      font-size: 15px;
+      line-height: 1.6;
+      resize: none;
+      outline: none;
+      background: #fff;
+    }
+    
+    .native-editor:focus {
+      border-color: #409eff;
+      box-shadow: 0 0 0 2px rgba(64,158,255,0.1);
+    }
+    
+    .editor-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .editor-tips {
+      font-size: 12px;
+      color: #909399;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- 顶部栏 -->
+    <div class="header">
+      <h1>📝 Hugo 博客管理系统</h1>
+      <div class="header-actions">
+        <button class="btn btn-primary" @click="showCreateModal">新建文章</button>
+        <button class="btn btn-warning" @click="previewBlog">预览博客</button>
+        <button class="btn btn-success" @click="showPublishModal" :disabled="publishing">
+          {{ publishing ? '发布中...' : '发布到GitHub' }}
+        </button>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="main-content">
+        <!-- 侧边栏 - 文章列表 -->
+        <div class="sidebar">
+          <div class="search-box">
+            <input 
+              type="text" 
+              v-model="searchQuery" 
+              placeholder="搜索文章..."
+            >
+          </div>
+          
+          <div v-if="filteredPosts.length === 0" class="empty-state">
+            <div class="empty-state-icon">📄</div>
+            <p>暂无文章</p>
+          </div>
+          
+          <ul class="post-list" v-else>
+            <li 
+              class="post-item" 
+              v-for="post in filteredPosts" 
+              :key="post.filename"
+              :class="{ active: currentPost && currentPost.filename === post.filename }"
+              @click="loadPost(post)"
+            >
+              <div class="post-item-title">
+                <span>{{ post.title }}</span>
+                <span>
+                  <span v-if="post.draft" class="badge badge-draft">草稿</span>
+                  <span v-if="post.encrypted" class="badge badge-encrypted">🔒</span>
+                </span>
+              </div>
+              <div class="post-item-date">{{ formatDate(post.date) }}</div>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- 编辑区域 -->
+        <div class="editor-area">
+          <div v-if="!currentPost" class="empty-state">
+            <div class="empty-state-icon">✍️</div>
+            <p>请选择或创建一篇文章开始编辑</p>
+          </div>
+          
+          <div v-else class="editor-wrapper">
+            <div class="editor-toolbar">
+              <div class="editor-toolbar-left">
+                <h2 style="font-size: 18px;">{{ currentPost.title }}</h2>
+                <span v-if="autoSaveStatus" class="status-text">{{ autoSaveStatus }}</span>
+              </div>
+              <div class="editor-toolbar-right">
+                <button class="btn btn-primary" @click="saveToLocal">保存到本地</button>
+                <button class="btn btn-danger" @click="deletePost">删除文章</button>
+              </div>
+            </div>
+            
+            <!-- Front Matter 编辑 -->
+            <div class="input-group">
+              <label>文章标题</label>
+              <input 
+                type="text" 
+                v-model="frontMatter.title" 
+                @input="onContentChange"
+                placeholder="文章标题"
+              >
+            </div>
+
+            <div class="input-group" style="display: flex; gap: 15px;">
+              <div style="flex: 1;">
+                <label>分类 (Categories)</label>
+                <input 
+                  type="text" 
+                  v-model="frontMatter.categories" 
+                  @input="onContentChange"
+                  placeholder="技术, 教程 (用逗号分隔)"
+                >
+              </div>
+              <div style="flex: 1;">
+                <label>标签 (Tags)</label>
+                <input 
+                  type="text" 
+                  v-model="frontMatter.tags" 
+                  @input="onContentChange"
+                  placeholder="Vue, Hugo (用逗号分隔)"
+                >
+              </div>
+            </div>
+            
+            <div class="checkbox-group">
+              <input 
+                type="checkbox" 
+                id="draft" 
+                v-model="frontMatter.draft"
+                @change="onContentChange"
+              >
+              <label for="draft">草稿</label>
+              
+              <input 
+                type="checkbox" 
+                id="encrypted" 
+                v-model="frontMatter.encrypted"
+                @change="onContentChange"
+                style="margin-left: 20px;"
+              >
+              <label for="encrypted">加密文章</label>
+              
+              <input 
+                v-if="frontMatter.encrypted"
+                type="text" 
+                v-model="frontMatter.password"
+                @input="onContentChange"
+                placeholder="设置密码"
+                style="margin-left: 10px; width: 150px;"
+              >
+              
+              <button 
+                v-if="frontMatter.encrypted" 
+                @click="tryManualDecrypt" 
+                class="btn btn-warning" 
+                style="margin-left: 10px; padding: 4px 10px; font-size: 12px;"
+              >
+                🔓 强制解密
+              </button>
+            </div>
+            
+            <div class="editor-tips">
+              提示：原生编辑器模式，支持所有 Markdown 语法，即写即存，极致稳定。
+            </div>
+
+            <!-- 原生 Textarea 编辑器 -->
+            <textarea 
+              class="native-editor" 
+              v-model="markdownContent" 
+              @input="onContentChange"
+              placeholder="开始写作..."
+            ></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 新建文章模态框 -->
+    <div v-if="showCreateDialog" class="modal" @click.self="showCreateDialog = false">
+      <div class="modal-content">
+        <h3 class="modal-title">新建文章</h3>
+        <div class="input-group">
+          <label>文件名（英文，用于URL）</label>
+          <input 
+            type="text" 
+            v-model="newPostFilename" 
+            placeholder="例如: my-new-post"
+            @keyup.enter="createPost"
+          >
+        </div>
+        <div class="modal-actions">
+          <button class="btn" @click="showCreateDialog = false">取消</button>
+          <button class="btn btn-primary" @click="createPost">创建</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 发布确认模态框 -->
+    <div v-if="showPublishDialog" class="modal" @click.self="showPublishDialog = false">
+      <div class="modal-content">
+        <h3 class="modal-title">发布到GitHub</h3>
+        <div class="input-group">
+          <label>提交信息</label>
+          <input 
+            type="text" 
+            v-model="commitMessage" 
+            placeholder="描述本次更新内容"
+            @keyup.enter="publishToGitHub"
+          >
+        </div>
+        <div class="modal-actions">
+          <button class="btn" @click="showPublishDialog = false">取消</button>
+          <button class="btn btn-success" @click="publishToGitHub">确认发布</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Toast 提示 -->
+    <div v-if="toast.show" :class="['toast', `toast-${toast.type}`]">
+      {{ toast.message }}
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

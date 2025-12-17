@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>调试页面</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .error { color: red; }
+    .success { color: green; }
+    button { margin: 5px; padding: 10px; }
+    pre { background: #f5f5f5; padding: 10px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>博客管理系统 - 调试页面</h1>
+    
+    <h2>1. 测试API连接</h2>
+    <button @click="testAPI">测试获取文章列表</button>
+    <pre v-if="apiResult">{{ apiResult }}</pre>
+    
+    <h2>2. 文章列表</h2>
+    <div v-if="posts.length === 0">没有文章</div>
+    <ul v-else>
+      <li v-for="post in posts" :key="post.filename">
+        {{ post.title }} ({{ post.filename }})
+        <button @click="loadPost(post)">加载</button>
+      </li>
+    </ul>
+    
+    <h2>3. 当前文章</h2>
+    <div v-if="currentPost">
+      <p>文件名: {{ currentPost.filename }}</p>
+      <p>标题: {{ frontMatter.title }}</p>
+      <textarea v-model="content" rows="10" style="width: 100%;"></textarea>
+      <br>
+      <button @click="saveToLocal">保存</button>
+    </div>
+    <div v-else>
+      <p>未选择文章</p>
+    </div>
+    
+    <h2>4. 日志</h2>
+    <pre>{{ logs.join('\n') }}</pre>
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+    const API_BASE = 'http://localhost:3000/api';
+    
+    createApp({
+      data() {
+        return {
+          posts: [],
+          currentPost: null,
+          frontMatter: { title: '', draft: false },
+          content: '',
+          apiResult: '',
+          logs: ['系统初始化...']
+        };
+      },
+      
+      async mounted() {
+        this.log('Vue已挂载');
+        await this.testAPI();
+      },
+      
+      methods: {
+        log(msg) {
+          console.log(msg);
+          this.logs.push(`[${new Date().toLocaleTimeString()}] ${msg}`);
+        },
+        
+        async testAPI() {
+          try {
+            this.log('开始测试API...');
+            const response = await axios.get(`${API_BASE}/posts`);
+            this.log('API响应成功');
+            this.apiResult = JSON.stringify(response.data, null, 2);
+            
+            if (response.data.success) {
+              this.posts = response.data.posts;
+              this.log(`加载了 ${this.posts.length} 篇文章`);
+            }
+          } catch (error) {
+            this.log('API错误: ' + error.message);
+            this.apiResult = '错误: ' + error.message;
+          }
+        },
+        
+        async loadPost(post) {
+          try {
+            this.log(`加载文章: ${post.filename}`);
+            const response = await axios.get(`${API_BASE}/posts/${post.filename}`);
+            
+            if (response.data.success) {
+              this.currentPost = post;
+              this.parseContent(response.data.content);
+              this.log('文章加载成功');
+            }
+          } catch (error) {
+            this.log('加载失败: ' + error.message);
+          }
+        },
+        
+        parseContent(fullContent) {
+          // 简单解析
+          const match = fullContent.match(/^\+\+\+\n([\s\S]*?)\n\+\+\+\n([\s\S]*)$/);
+          
+          if (match) {
+            const frontMatter = match[1];
+            this.content = match[2];
+            
+            const titleMatch = frontMatter.match(/title\s*=\s*['"](.+?)['"]/);
+            if (titleMatch) {
+              this.frontMatter.title = titleMatch[1];
+            }
+            
+            this.log('内容解析成功');
+          } else {
+            this.content = fullContent;
+            this.log('未找到Front Matter');
+          }
+        },
+        
+        async saveToLocal() {
+          if (!this.currentPost) return;
+          
+          try {
+            this.log('开始保存...');
+            const fullContent = `+++
+date = '${new Date().toISOString()}'
+draft = ${this.frontMatter.draft}
+title = '${this.frontMatter.title}'
++++
+
+${this.content}`;
+            
+            const response = await axios.post(`${API_BASE}/posts/save`, {
+              filename: this.currentPost.filename,
+              content: fullContent
+            });
+            
+            if (response.data.success) {
+              this.log('保存成功！');
+              alert('保存成功！');
+            }
+          } catch (error) {
+            this.log('保存失败: ' + error.message);
+            alert('保存失败: ' + error.message);
+          }
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>
+
