@@ -1,0 +1,5 @@
+{{ $covers := .Site.Data.covers }}
+{{ $index := mod (now.UnixNano) (len $covers) }}
+{{ $cover := index $covers $index }}
+{{ return $cover }}
+
